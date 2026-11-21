@@ -1,0 +1,23 @@
+\section{The scalar genus mass and its Euler product}\label{sec:genusmass}
+Keep the positive definite hypotheses and fix $H$. Consider the finite set of all $H$-classes of parents in the genus of $L$ in $V$, with representatives $L_1,\ldots,L_h$ and mass $\mathfrak m_H=\sum_i|\Gamma_H(L_i)|^{-1}$. Local ordinary and proper types coincide by the integral reflection
+argument of Section~\ref{sec:indef}; the fixed orientation is used at
+the real place. The genus is taken in the fixed rational space $V$.
+
+For a local sublattice $P\subset L_p$ of index $p^e$, let $b(P,L_p)$ count its overlattices isometric to $L_p$ of relative index $p^e$. This finite positive number is obtained by testing isotropic subgroups of the local discriminant module. Put
+\[
+ t_p(e)=\sum_{\substack{P\subset L_p\\{}[L_p:P]=p^e}}b(P,L_p)^{-1}.
+\]
+Let $\mathcal U_H(m)$ be the union of the sets of represented child classes at index $m$ over all the $L_i$. Then
+\begin{equation}\label{eq:genusmass}
+ \sum_{[M]\in\mathcal U_H(m)}\frac{1}{|\Gamma_H(M)|}
+       =\mathfrak m_H\prod_{p^e\Vert m}t_p(e).
+\end{equation}
+In particular for a parent of $H$-class number one in its genus its entire scalar contribution has an Euler product. Its residue is explicitly
+\[
+ R_H=\frac{c_H}{|\Gamma_H(L)|}
+        \prod_p\left[(1-p^{-1})\sum_{e\ge0}t_p(e)p^{-ne}\right].
+\]
+A parent above $M$ in this genus corresponds to a collection of local overlattices of the prescribed types. Patching is bijective; every result is one of the global genus classes. Hence their total number is $b(M)=\prod_p b(M_p,L_p)$. Counting transporters as in Theorem~\ref{th:core}, the number of raw copies of $M$ in $L_i$ divided by $|\Gamma_H(L_i)|$ equals the number of its overparents of class $i$ divided by $|\Gamma_H(M)|$. Sum over $i$, divide by $b(M)$, then interchange the sum over raw sublattices and the finite parent sum. The local raw sum of $1/b(M)$ is identical for every $L_i$ by local isometry, and factors by primary decomposition. This proves \eqref{eq:genusmass}.
+
+At $p\notin S$, regular kernels have $b(P,L_p)=1$, and
+irregular kernels contribute weight at most one. The estimates in Theorem~\ref{th:analytic} imply that after extracting $\zeta(s-n+1)$ the normalized product is absolutely convergent on $\Re s>n-1$. At $s=n$ each factor is strictly positive. The other transporter terms are holomorphic there, giving the claimed residue for a single-class genus. 

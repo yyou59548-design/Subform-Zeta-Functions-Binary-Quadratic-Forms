@@ -1,0 +1,48 @@
+\section{Indefinite binary parents}\label{sec:realbinary}
+The rationally split indefinite binary case was treated by Kim,
+Lee and Lee \cite{Hyperbolic}; its proper integral stabilizers are
+finite. For a nonsplit space, the proper rotation group modulo
+scalar signs is infinite cyclic, and the order of its generating
+quadratic unit already enters the prime-index count.
+
+\begin{proposition}\label{prop:splitbinary}
+For a rationally split indefinite binary parent the restoration formula, the meromorphic continuation and error in Theorem~\ref{th:analytic}, and the residue comparison in Theorem~\ref{th:orientation} all hold with \(n=2\). The proper transporter sum has only its scalar terms.
+\end{proposition}
+\begin{proof}
+The two rational isotropic lines span the space. Any proper isometry preserves both lines, since in an isotropic basis the isometries interchanging the lines are antidiagonal of determinant \(-1\). An integral automorphism acts by signs on the primitive generators of the intersections of those lines with its lattice. Its determinant being one, the signs coincide. Thus every proper intrinsic stabilizer is \(\{\pm I\}\) and the ordinary stabilizer has order at most four. The finite stabilizers allow the restoration and HNF estimates of Theorems~\ref{th:core} and~\ref{th:analytic} to apply in rank two. The orientation comparison uses the same scalar masses and a rational orthogonal basis. Integral equivalence is decided by the finite procedure below.
+\end{proof}
+
+Both equivalence relations admit finite tests at every index.
+Start from column HNFs and their Gram matrices. To test \(U^t A U=B\), make integral proper basis changes so \(a=A_{11}\) and \(b=B_{11}\) are nonzero (one of three primitive directions suffices). Write \(A=\left(\begin{smallmatrix}a&d\\d&c\end{smallmatrix}\right)\), \(D=d^2-ac>0\). For the first column \((u,v)^t\), put \(t=au+dv\); then \(t^2-Dv^2=ab\ne0\). For square \(D\) factor \(ab\) into the two signed integer factors \(t\pm\sqrt D\,v\). For nonsquare \(D\), take any positive Pell unit \(\lambda=T+S\sqrt D>1\) of norm one, available by the classical Pell theorem. Multiplication by this unit acts on \((u,v)^t\) by the proper integral isometry
+\[
+ \begin{pmatrix}T-dS&-cS\\ aS&T+dS\end{pmatrix}.
+\]
+Modulo its powers it suffices to enumerate the solutions with
+\(\sqrt{|ab|}\le |t+v\sqrt D|<\lambda\sqrt{|ab|}\). The conjugate is \(ab/(t+v\sqrt D)\), giving explicit bounds for both integers \(t,v\). Discard pairs with \(a\nmid t-dv\). For each remaining first column and each desired sign, the two linear equations for the second column \(w\) are \(x^tAw=B_{12}\) and \(\det(x,w)=\pm1\), with \(x=(u,v)^t\). Their coefficient determinant is \(b\ne0\). Test the unique solution for integrality and for \(w^tAw=B_{22}\). The resulting finite tests decide ordinary and proper equivalence.
+
+\begin{theorem}\label{th:inertreal}
+Suppose the indefinite binary space is rationally nonsplit. For every index \(m\) supported on odd primes \(p\nmid\det B_L\) with \((-\det B_L/p)=-1\), the following formula computes both coefficients from a single generator of the rotation group modulo \(\{\pm I\}\). For each \(p^e\Vert m\), independently choose \(k_p=e,e-2,\ldots\) down to \(0\) or \(1\). Set \(v_p(0)=o_p(0)=1\). For \(k>0\) put
+\[
+ v_p(k)=(p+1)p^{k-1},\qquad
+ o_p(k)=\operatorname{ord}\bigl(\varepsilon\text{ in }
+                     {\rm PGL}(L_p/p^k L_p)\bigr).
+\]
+For the tuple $\boldsymbol{k}=(k_p)_{p\mid m}$ define
+\(\mathfrak a(\boldsymbol{k})=\prod_p v_p(k_p)/\operatorname{lcm}_p o_p(k_p)\),
+where the least common multiple of an empty set is one, and let
+\(r=\#\{p:k_p>0\}\).
+The proper coefficient is the sum of $\mathfrak a(\boldsymbol{k})$ over these tuples. If the ordinary parent has an improper automorphism, replace this weight by
+$[\mathfrak a(\boldsymbol{k})+2^r]/2$; otherwise the ordinary coefficient equals the proper coefficient at these indices.
+\end{theorem}
+\begin{proof}
+Over the reals the proper orthogonal group in split coordinates is diagonal, with weights \(z,z^{-1}\). Its integral stabilizer modulo scalar signs embeds discretely in \(\mathbb R\) by \(\log|z|\), since bounded intervals give bounded integral matrices. The Pell construction supplies a nontrivial element, so the image is infinite cyclic; choose a generator \(\varepsilon\). A generator is obtained by enumerating integral rotations whose
+logarithms lie between zero and that of a known Pell element.
+
+At an indicated prime the reduced form is anisotropic and unimodular. Thus the valuation of the norm of any vector is twice the minimum valuation of its coordinates, up to the fixed unit normalization of the polarization. In particular \(L_p=\{x:Q(x)\in\mathbb Z_p\}\) in this normalization, and every rational local isometry preserves \(L_p\). At primes away from \(m\) the children coincide with \(L_p\). Every isometry between children of such indices therefore preserves the global parent. By Smith normal form, removing the common scalar \(p^{(e-k_p)/2}\) leaves the kernel of a primitive covector modulo \(p^{k_p}\), or all of \(L_p\) for \(k_p=0\). There are \(v_p(k_p)\) choices.
+
+If a rotation fixes one primitive projective covector modulo \(p^k\), its corresponding normal has unit norm. The eigenvalue has square one, hence equals \(+1\) or \(-1\) since \(p\) is odd. The complementary line is nondegenerate and its eigenvalue is the same sign by determinant one. Thus the rotation is projectively scalar on the entire module. The simultaneous rotation orbit has length exactly the stated least common multiple. If an improper parent automorphism exists, it and every element of its rotation coset have square one and determinant minus one in the rational split eigenbasis. Their local projectors \((1\pm h)/2\) have rank one, hence precisely two primitive projective lines are fixed at every active prime power. Taking the average over one period of the rotations and one period of their improper coset gives $[\mathfrak a(\boldsymbol{k})+2^r]/2$, also when the projective action is not faithful. Burnside averaging gives the stated ordinary and proper coefficients.
+\end{proof}
+At a good inert prime the proper coefficient is \((p+1)/o_p(1)\).
+For indices with several prime divisors, the local periods enter
+through their least common multiple rather than separate factors.
+

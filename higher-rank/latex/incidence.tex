@@ -1,0 +1,78 @@
+\section{A finite incidence formula over copies of the parent}\label{sec:inc}
+
+Suppose $V$ is positive definite and $H$ denotes either
+$O(V)(\mathbb Q)$ or $SO(V)(\mathbb Q)$. For $m\ge1$, set
+\[
+ \mathcal P_m(L)=\{gL:g\in H,\; mgL\subset L\}.
+\]
+Writing \(g=A/m\), we enumerate integral
+matrices \(A\) satisfying \(A^tB_LA=m^2B_L\), using the column
+bounds of Section~\ref{sec:core}; for the proper count we retain
+positive determinant. For each subset \(F\subset\mathcal P_m(L)\) containing \(L\), put \(K_F=\bigcap_{P\in F}P\), \(d_F=[L:K_F]\). Write \(G_F=\{u\in H:uF=F\}\), computable in the finite group \(\Gamma_H(K_F)\). For \(u\in G_F\) let \(c(u,F)\) be the number of cycles of its permutation of \(F\). Write
+\[
+ b_{K,u}(k)=\#\{M\subset K:[K:M]=k,\ uM=M\}.
+\]
+
+If $u$ permutes a nonempty finite set $\Omega$, the $u$-invariant
+subsets are unions of cycles. Hence
+\[
+ \sum_{\substack{\varnothing\ne F\subseteq\Omega\\uF=F}}
+ (-1)^{c(u,F)-1}=1.
+\]
+\begin{theorem}\label{th:incidence}
+At every index and in every positive dimension the actual coefficient is
+\[
+ a_H(m)=\frac1{|\Gamma_H(L)|}
+  \sum_{\substack{L\in F\subset\mathcal P_m(L)\\ d_F\mid m}}
+  \frac1{|F|}\sum_{u\in G_F}(-1)^{c(u,F)-1}\, b_{K_F,u}(m/d_F).
+\]
+Each \(b_{K,u}\) is multiplicative. Its prime-power series is given at every prime by the finite expression in Theorem~\ref{th:matrixlocal}.
+\end{theorem}
+\begin{proof}
+For an actual child \(M\), let \(\mathcal P(M)\) be the parents in \(H L\) containing \(M\). Each has the covolume of \(L\), so \(mP\subset M\) for every such \(P\); the set is finite and nonempty. Apply the invariant-subset identity above to every \(u\in\Gamma_H(M)\), then average over \(\Gamma_H(M)\) and sum over the represented classes \(M\). Equivalently, sum over \(H\)-classes of incident pairs \((M,F)\) with coefficient
+\(
+ |\Gamma_H(M,F)|^{-1}\sum_{u\in\Gamma_H(M,F)}(-1)^{c(u,F)-1}.
+\)
+
+For each invariant summand, mark any vertex \(P\in F\), count all \(|F|\) possible marks, and divide by \(|F|\). Under orbit--stabilizer, summing over marked orbits gives exactly \(|F|\) times the unmarked stabilizer weight. Here \(u\) preserves \(F\), although it may permute its marked vertices. Transporting the marked parent to \(L\) leaves the group
+\(\Gamma_H(L)\). We therefore sum over raw pairs \(F,M\),
+with weight \(1/|\Gamma_H(L)|\). The conditions become \(M\subseteq K_F\), \([K_F:M]=m/d_F\), and \(uM=M\) with \(uF=F\). Interchanging the finite sums yields the formula. Primary decomposition gives the multiplicativity of \(b_{K,u}\).
+\end{proof}
+
+\subsection{The fixed-submodule factor at any prime}
+Set \(\Lambda=K_p\), \(R=\mathbb Z_p[u]\), \(E=\mathbb Q_p[u]\). Finite order makes the minimal polynomial squarefree in characteristic zero, so \(E\) is a product of fields \(E_i\). Put \(\mathcal O=\prod_i O_i\), the product of their integer rings. Choose a nonnegative integer \(a\) with \(p^a\mathcal O\subset R\), for example by a lattice index calculation. Write \(\widehat\Lambda=\mathcal O\Lambda\simeq\bigoplus_i O_i^{r_i}\), using a chosen basis on each summand. The first inclusion below follows from \(p^a\mathcal O\subset R\):
+\[
+ p^a\widehat\Lambda\subset\Lambda\subset\widehat\Lambda .
+\]
+For \(P\subset\widehat\Lambda\) of full rank write \(v(P)=\log_p[\widehat\Lambda:P]\). Enumerate the finite set
+\[
+ \mathcal B=\{ P:p^a\widehat\Lambda\subset P\subset\widehat\Lambda,\quad
+                        RP=P,\ \mathcal O P=\widehat\Lambda\}
+\]
+as subgroups of the finite quotient. Fix a uniformizer \(\pi_i\) and a system of residue digits in each \(O_i\). Write \(q_i=p^{f_i}\) for its residue cardinality and \(s_i=v_{\pi_i}(p^a)\). For row \(k=1,\ldots,r_i\) choose \(0\le t_{ik}\le s_i\). Form a block upper triangular matrix \(\bar D\) over \(\mathcal O/p^a\mathcal O\) with diagonal \(\pi_i^{t_{ik}}\) modulo \(p^a\). The \(r_i-k\) entries to its right run independently over the digit representatives of \(O_i/\pi_i^{t_{ik}}O_i\). There are no off-block entries. The containment
+\(\bar D P\subset\Lambda\bmod p^a\widehat\Lambda\) is tested in
+the finite quotient.
+
+\begin{theorem}\label{th:matrixlocal}
+For a finite-order automorphism of any integral lattice, the local series \(\sum_{e\ge0}b_{K,u}(p^e)T^e\) equals
+\[
+ \sum_{(t_{ik})}
+ \left(\prod_{i,k}T^{f_i t_{ik}}\right)
+ \left(\prod_{t_{ik}=s_i}(1-q_i^{r_i-k}T^{f_i})^{-1}\right)
+ \sum_{\bar D}\ 
+ \sum_{\substack{P\in\mathcal B\\\bar D P\subset\Lambda\bmod p^a\widehat\Lambda}}
+ T^{v(P)-v(\Lambda)}.
+\]
+In particular its denominator divides
+\(\prod_i\prod_{j=0}^{r_i-1}(1-q_i^jT^{f_i})\) after cancellation. If \(R=\mathcal O\), its numerator can be taken to be one. This applies at \(p\nmid\operatorname{ord}(u)\), since \(X^{\operatorname{ord}(u)}-1\) is separable modulo \(p\).
+\end{theorem}
+\begin{proof}
+For an \(R\)-stable \(M\subset\Lambda\) let \(\widehat M=\mathcal O M\). Each component of \(\widehat M\) has a unique upper triangular Hermite matrix with diagonal \(\pi_i^{l_{ik}}\) and entries to the right in the fixed digit representatives modulo \(\pi_i^{l_{ik}}\). This follows by projecting successively on the last coordinate and reducing each lifted basis vector by the columns already chosen. The combined matrix \(D\) identifies \(\widehat\Lambda\) with \(\widehat M\). Now \(p^a\widehat M\subset M\), so \(P=D^{-1}M\) belongs to \(\mathcal B\). Conversely every pair \(D,P\) with \(DP\subset\Lambda\) gives such an \(M\), and \(\mathcal O(DP)=D\widehat\Lambda\) recovers \(D\). The containment test depends only on \(D\bmod p^a\), while the
+index exponent is \(\sum f_i l_{ik}+v(P)-v(\Lambda)\).
+Clip \(l_{ik}\) to \(t_{ik}=\min(l_{ik},s_i)\). For \(t_{ik}<s_i\) the residue matrix fixes all the entries of that row. For \(l_{ik}\ge s_i\) every admissible residue row has exactly \(q_i^{(l_{ik}-s_i)(r_i-k)}\) lifts. Summing these multiplicities with their index weights gives the displayed geometric factors. Any apparent negative power from \(v(P)-v(\Lambda)\) is offset by the index of the residue matrix lifted with \(l_{ik}=t_{ik}\), because its image of \(P\) lies in \(\Lambda\). If \(a=0\) the only lattice \(P\) is \(\widehat\Lambda=\Lambda\) and all \(t_{ik}=0\). At a prime away from the order of \(u\), factor the separable reduction and lift the distinct factors by Hensel's lemma. The resulting finite unramified integer rings are integrally closed and the summands corresponding to the minimal polynomial give \(R\).
+\end{proof}
+For invariant-submodule zeta functions of orders, see Solomon
+\cite{Solomon} and Rossmann's local formulas and exceptional-prime
+corrections \cite[Thm.~A and Rem.~5.6]{Rossmann}. Together with the incidence formula, these local fixed-submodule
+series determine the intrinsic coefficients.
+

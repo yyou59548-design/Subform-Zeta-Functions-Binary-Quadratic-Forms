@@ -1,0 +1,104 @@
+\section{Meromorphic continuation and the counting law}\label{sec:analytic}
+Set $S_d=S\cup\{p:p\mid d\}$, and retain the nonisotropic-line
+count $P_n$ of Section~\ref{sec:core}. Define
+\[
+ A_d(s)=\prod_{p\in S_d}(1-p^{n-1-s})
+         \prod_{p\notin S_d}\bigl(1+(P_n(p)-p^{n-1})p^{-s}\bigr),\qquad
+ W_H(d)=\sum_{[N]\in\mathcal C_H(d)}\frac{c_H}{|\Gamma_H(N)|}.
+\]
+\begin{theorem}\label{th:analytic}
+For every positive definite $L$ of rank $n\ge2$, each orientation convention has
+\[
+ Z_H(s)=\zeta(s-n+1)D_H(s)+E_H(s),\qquad
+ D_H(s)=\sum_{d\ge1}W_H(d)d^{-s}A_d(s),
+\]
+where $D_H,E_H$ are absolutely convergent Dirichlet series on $\Re s>n-1$. The abscissa of convergence is $n$, and the unique pole on $\Re s>n-1$ is simple with residue $R_H=D_H(n)>0$. For real $X\ge2$ and every $\epsilon>0$,
+\[
+ \sum_{m\le X}a_H(m)=\frac{R_H}{n}X^n+O_{L,\epsilon}(X^{n-1+\epsilon}).
+\]
+\end{theorem}
+\begin{proof}
+\emph{The core majorant.}
+Let $B(d)$ be the number of raw cores. Primary decomposition of subgroups of the finite module $L/dL$ gives multiplicativity of $B$. At $p\in S$, its local factors have coefficients $b_n(p^e)$. Elsewhere they have coefficients $b_n(p^e)-P_n(p)p^{(e-1)(n-1)}$ for $e\ge1$. Uniformly in $e\ge1$,
+\[
+ p^{(n-1)e}\le b_n(p^e)\le p^{(n-1)e}\prod_{j=1}^{n-1}(1-p^{-j})^{-1}
+ \le p^{(n-1)e}(1+C_n/p).
+\]
+The first two inequalities follow by extracting the highest-weight
+geometric factor from the HNF series. Since $P_n(p)=p^{n-1}+O_n(p^{n-2})$, the bad coefficients outside $S$ are $O_n(p^{(n-1)e-1})$. For $\sigma=n-1+\delta$, $\delta>0$, their weighted local sum is $O_{n,\delta}(p^{-1-\delta})$. Hence $\sum B(d)d^{-\sigma}<\infty$.
+
+\emph{Scalar contributions.}
+For scalar $h$, \eqref{eq:goodfactor} supplies exactly $\zeta(s-n+1)A_d(s)$. The sum of absolute values of coefficients of $A_d$ weighted at $\sigma$ is at most
+\[
+ C_{n,\delta}\prod_{p\mid d}(1+p^{-\delta})\ll_{n,\delta,\eta,S} d^\eta\qquad(\eta>0).
+\]
+Absolute convergence of the product outside $S_d$ follows from
+$\sum_p p^{-1-\delta}<\infty$; moreover,
+$1+p^{-\delta}\le p^\eta$ for all sufficiently large $p$.
+With $W_H(d)\le B(d)$ and $0<\eta<\delta$, the Dirichlet series for $D_H$ converges absolutely.
+
+\emph{Nonscalar contributions.}
+For a nonscalar $h\in\Gamma_H(N)$, reduction modulo any odd prime cannot be scalar. Otherwise conjugation by $h$ on $\mathrm{End}_{\mathbb Z}(N)$ would be trivial modulo $p$. A finite-order integral matrix congruent to the identity modulo an odd prime is the identity: a nontrivial prime-order power has the form $1+p^a C$, $a\ge1$, with some entry of $C$ a unit. By the binomial expansion its $\ell$th power minus one has minimum entry valuation $a$ for $\ell\ne p$ and $a+1$ for $\ell=p$. Trivial conjugation forces $h$ to be scalar over $\mathbb Q$.
+
+Positive definiteness makes $\Gamma_H(N)$ finite. A nonscalar matrix over $\mathbb F_p$ has at most $n$ eigenspaces for rational eigenvalues, each of dimension at most $n-1$. It therefore fixes $O_n(p^{n-2})$ projective lines. Bounding their lifts gives, uniformly,
+\[
+ g_{p,h}(e)\ll_n p^{(n-1)e-1}\quad(e\ge1,\ p\notin S_d).
+\]
+At $\sigma$ these local products are bounded in terms of
+$n,\delta$, independently of nonscalar $h$. Averaging over
+$\Gamma_H(N)$ and using the core majorant $B(d)$ proves absolute
+convergence of $E_H$. The HNF majorant justifies the rearrangements on $\Re s>n$, and the convergent expressions extend the identity to $\Re s>n-1$.
+
+\emph{The residue and the summatory law.}
+Each $A_d(n)$ is positive: each of its factors outside $S_d$ is at least $1-p^{-1}$ and the product converges absolutely, and the excluded factors equal $1-p^{-1}$. Also $W_H(1)>0$. For the summatory formula let $u(k)$ be the coefficients of $D_H$. In the convolution with $j^{n-1}$ use $\sum_{j\le y}j^{n-1}=y^n/n+O_n(y^{n-1})$ for $y\ge1$. The main-term tail is bounded by $X^{n-1+\eta}\sum_k|u(k)|k^{-(n-1+\eta)}$ for $0<\eta<\min(1,\epsilon)$. Absolute convergence gives the same bound for the power-sum
+error and the summatory function of $E_H$. Since the main coefficient
+is positive, partial summation gives divergence at $n$.
+\end{proof}
+
+\begin{corollary}\label{cor:KLL}
+For each scalar $\rho\in H$ the transporter-weighted term of Kim--Lee--Lee has a simple pole at $n$ of residue $R_H/c_H$ and is meromorphic on $\Re s>n-1$. The sum over \emph{all nonscalars} converges absolutely there. For even $n$ the entire determinant-minus-one sum is holomorphic there. For odd $n$ that sum equals $\tfrac12 Z_O$.
+\end{corollary}
+\begin{proof}
+In the notation of \cite[\S2.4, (2.4)--(2.5)]{KLLpre}, a raw $M$ fixed by $\rho$ contributes the reciprocal of the number of $\sigma\in H$ with $\sigma M\subset L$. At a fixed index this denominator is the number of images times $|\Gamma_H(M)|$. Thus the contribution of a scalar equals $\sum_{[M]}1/|\Gamma_H(M)|$. In each restored-core orbit of children the stabilizer is exactly $\Gamma_H(M)$, by uniqueness of restoration. The identity term of Burnside evaluates that same sum, so the total scalar part is precisely $\zeta(s-n+1)D_H(s)$. The remaining transporter contributions have nonnegative
+coefficients and sum to $E_H$. In odd rank $\rho\mapsto-\rho$ pairs determinant signs with identical fixed sets and denominators.
+\end{proof}
+
+\section{Orientation, prime extensions and Euler products}\label{sec:orientation}
+For an ordinary represented class let its two possible orientations be identified if it has an improper automorphism. If such an automorphism exists, the class is called achiral. A chiral class can have either one or two orientations represented in $L$. The set of represented proper classes need not be invariant under orientation reversal. If $S_m$ is that set, with involution $\iota$ acting on the full ambient set of proper classes, then
+\[
+ 2a_O(m)=|S_m\cup\iota S_m|+|S_m\cap\operatorname{Fix}(\iota)|.
+\]
+
+\begin{theorem}\label{th:orientation}
+In every even rank $n\ge2$,
+\[
+ \tfrac12 R_{SO}\le R_O<R_{SO},\qquad
+ R_O=\tfrac12 R_{SO}\ \Longleftrightarrow\ L\text{ has an improper automorphism}.
+\]
+In particular the excess of proper over ordinary classes has a positive leading term in its summatory function, even when $L$ itself has no improper automorphism.
+\end{theorem}
+\begin{proof}
+Group the proper core masses at each $d$ by ordinary core class. Both scalar groups have size two. An achiral ordinary core contributes twice its ordinary mass to the proper mass, since the stabilizer loses a factor two. A chiral core contributes its ordinary mass times the number of orientations actually represented. The factors $A_d(n)$ depend only on $d,L,S$. If $L$ has an improper automorphism, it supplies the other orientation of every chiral core. If $L$ is chiral the index-one class occurs in just one orientation, proving strict inequality on that side. For the other strict inequality choose a rational orthogonal basis and clear denominators to obtain an achiral diagonal sublattice $K\subset L$ of index $b$. Enlarge $S$ by the primes dividing $b$. The decomposition is valid for this finite set and the residues of the same functions are unchanged. This $K$ is now a core and contributes strictly more proper than ordinary mass. Apply Theorem~\ref{th:analytic}.
+\end{proof}
+
+Put $u_H(M)=|\Gamma_H(M)|/c_H$ and $\mathcal M_H(b)=\{[M]_H:[L:M]=b,\ M\subset L\}$.
+\begin{lemma}\label{lem:pr}
+For fixed $b\ge1$ and primes $p\to\infty$,
+\[
+ a_H(bp)=p^{n-1}\sum_{[M]\in\mathcal M_H(b)}u_H(M)^{-1}+O_{L,b}(p^{n-2}).
+\]
+\end{lemma}
+\begin{proof}
+Include all divisors of $b$ that are primes in $S$. When $p\nmid b$ is regular, saturation gives the actual classes at index $b$. Equations \eqref{eq:goodfactor} and the nonscalar fixed-line estimate give the stated leading term. At an irregular $p$ the number of raw choices is at most $b_n(b)(b_n(p)-P_n(p))=O_{b,n}(p^{n-2})$ by primary decomposition. The same bound holds for the corresponding classes.
+\end{proof}
+
+\begin{theorem}\label{th:nonmult}
+For every positive definite rational lattice of rank $n\ge3$, neither orientation count is multiplicative. Neither Dirichlet series admits the normalized Euler product of its prime-power subseries.
+\end{theorem}
+\begin{proof}
+Write $u=u_H(L)$. Multiplicativity and Lemma~\ref{lem:pr} at $b$ and $1$ would give
+\[
+ \sum_{[M]\in\mathcal M_H(b)}u_H(M)^{-1}=a_H(b)/u\qquad\text{for every }b.
+\]
+For $b=\ell$ a large regular-eligible prime, this weighted count is $\ell^{n-1}/u+O_L(\ell^{n-2})$. Indeed its regular contribution is exactly $P_n(\ell)/u$ by orbit--stabilizer and the irregular part is bounded by its raw count. The unweighted $a_H(\ell)$ also equals $\ell^{n-1}/u+O_L(\ell^{n-2})$ by the lemma. Letting $\ell\to\infty$ forces $u=1$. The displayed equality now forces $u_H(M)=1$ for every represented sublattice. A rational orthogonal basis supplies a diagonal sublattice inside $L$. Changing two of its coordinate signs is a proper nonscalar isometry in every $n\ge3$, a contradiction for either $H$. Uniqueness of Dirichlet coefficients gives the Euler-product assertion.
+\end{proof}

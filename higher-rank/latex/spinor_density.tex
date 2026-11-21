@@ -1,0 +1,29 @@
+\subsection{Density of indices with multiple represented classes per local type}
+Retain \(S=\{p:p\mid 2\det B_L\}\) in the indefinite setting \(n\ge3\).
+For every \(m\), write \(m=dt\), where the entire \(S\)-part and every other prime power of exponent at least two belong to \(d\). The remaining \(t\) is squarefree and coprime to \(S_d\). Let \(\mathcal D\) be the set of admissible \(d\), including one. Write \(\xi_H(m)=1\) if \(a_H(m)>c(m)\), and zero otherwise.
+
+\begin{theorem}\label{th:densityind}
+One has \(\xi_H(m)=\xi_H(d)\). The set of indices with more represented \(H\)-classes than local type tuples has a natural density strictly between zero and one. More precisely,
+\[
+ \sum_{m\le X}\xi_H(m)=\Delta_H X+O_{L,\epsilon}(X^{1/2+\epsilon}),\qquad
+ \Delta_H=\frac{1}{\zeta(2)}
+ \sum_{\substack{d\in\mathcal D\\a_H(d)>c(d)}}\frac1d
+                 \prod_{p\in S_d}(1+p^{-1})^{-1}.
+\]
+\end{theorem}
+\begin{proof}
+If each base tuple at \(d\) represents a single spinor label in its relevant quotient, any further quotient of that singleton has one element. If a tuple has more than one label, choose either nonisotropic extension at every prime dividing \(t\). For all \(2^{\omega(t)}\) choices the subgroup \(D\) in Lemma~\ref{lem:projection} is zero; the labels of this tuple remain distinct. Every other tuple contributes at least one class. Hence $\xi_H(m)=\xi_H(d)$.
+
+For \(\Re s>1\) sum the squarefree extensions for each admissible \(d\). Their Euler product gives
+\[
+ \sum_{m\ge1}\xi_H(m)m^{-s}=\zeta(s) U_H(s),\qquad
+ U_H(s)=\frac1{\zeta(2s)}\sum_{d\in\mathcal D}\xi_H(d)d^{-s}
+                 \prod_{p\in S_d}(1+p^{-s})^{-1}.
+\]
+The latter is an absolutely convergent Dirichlet series on \(\Re s>1/2\). Indeed the finite inverse factors have absolute coefficient norm at \(\sigma>1/2\) bounded by \(O_{S,\sigma,\eta}(d^\eta)\) for any \(\eta>0\), and \(\sum_{d\in\mathcal D}d^{-u}\) converges for \(u>1/2\) by its elementary prime product. The reciprocal of \(\zeta(2s)\) is also absolutely convergent there. In the convolution with the constant one sequence, summing \(\lfloor X/k\rfloor=X/k+O(1)\) gives the stated error and constant. The positive spinor twist in Theorem~\ref{th:indeuler} supplies at least one admissible \(d\) of positive weight with \(\xi_H(d)=1\); its prime exponent is \(n(n-1)/2\ge3\). Taking \(d=1\) supplies strictly positive weight to the complement, whose density is given by the same proof with \(1-\xi_H\).
+\end{proof}
+\begin{remark}
+Both indicator Dirichlet series extend meromorphically to
+$\Re s>1/2$, with positive simple-pole residues at $s=1$.
+\end{remark}
+

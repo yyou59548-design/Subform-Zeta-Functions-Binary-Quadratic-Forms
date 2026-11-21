@@ -1,0 +1,35 @@
+\begin{corollary}\label{cor:real-large-moduli}
+For every fixed nonsplit indefinite binary parent, either orientation and every $\epsilon>0$,
+\[
+ \sum_{m\le X}a_H(m)\gg_{L,\epsilon} X^{13/8-\epsilon}.
+\]
+In particular the abscissa of convergence is at least $13/8$.
+\end{corollary}
+\begin{proof}
+Let $\vartheta=5/8$ and let $M_0$ be the fixed splitting modulus of Theorem~\ref{th:realgrowth}. Pascadi's estimate for triply-well-factorable weights \cite[Def.~1.1 and Thm.~1.3(i)]{Pascadi} gives, for any $A,\kappa>0$, fixed residue $a=1$ and $Q\le x^{\vartheta-\kappa}$,
+\[
+ \sum_{d\le Q}\lambda_d\left(\pi(x;d,1)-\frac{\pi(x)}{\varphi(d)}\right)
+       \ll_{A,\kappa}\frac{x}{(\log x)^A}
+\]
+when $\lambda$ is triply-well-factorable of level $Q$. This means that for each $Q=Q_1Q_2Q_3$ with $Q_i\ge1$, the same sequence is the Dirichlet convolution of three $1$-bounded sequences supported on integers $\le Q_i$.
+
+Fix $0<h<\min(\epsilon/20,1/100)$. For large $y$ put $u=y^h$, $Q=y^{\vartheta-h}$ and $N=\lfloor(\vartheta-5h)/h\rfloor$. Divide $(u/2,u]$ into $N$ disjoint equal-length intervals. Let $\lambda$ be the Dirichlet convolution of the point mass at $M_0$ and the $N$ prime indicators of these intervals. Every convolution of a subset of the factors is $1$-bounded by unique factorization, since the prime intervals are disjoint and the factor $M_0$, when present, is fixed. For every $Q=Q_1Q_2Q_3$ the sum of the integer capacities $\lfloor\log Q_i/\log u\rfloor$ is at least $\vartheta/h-4\ge N+1$. Allocate the $N+1$ factors among the three groups within those capacities. Every factor has support at most $u$, including $M_0$ for large $y$, and an empty group is the point mass at one. This proves the required triple factorability for every factorization of $Q$.
+
+Apply the estimate at $x=y$ and $x=y/2$ with $\kappa=h/2$;
+the chosen exponent of $Q$ permits both applications for large $y$. The sum of the main coefficients satisfies
+\[
+ \sum_d\frac{\lambda_d}{\varphi(d)}
+ \ \ge\ \sum_d\frac{\lambda_d}{d}
+ \ =\ \frac1{M_0}\prod_{i=1}^N\sum_{\ell\ \mathrm{prime\ in\ interval}\ i}\ell^{-1}
+ \ \gg_{L,h}(\log y)^{-N},
+\]
+by the prime number theorem on each fixed-proportion interval. Taking $A>N+1$ supplies $\gg_{L,h}y/(\log y)^{N+1}$ incidences of primes $y/2<p\le y$ with $d\mid p-1$ and $\lambda_d=1$. Each integer $p-1$ has $O_h(1)$ distinct prime divisors exceeding $u/2$, so an individual $p$ accounts for $O_h(1)$ incidences. There are therefore $\gg_{L,h}y/(\log y)^{N+1}$ distinct such primes $p$, all $1\bmod M_0$.
+
+For each of these primes, $p-1=M_0\ell_1\cdots\ell_N b$ with $b\ll_{L,h}y^{1-Nh}$ and $Nh\ge\vartheta-6h$. All $N+2$ factors are bounded by $z=\lceil y^{1-\vartheta+7h}\rceil$ for large $y$. Hence $p-1$ divides $\operatorname{lcm}(1,\ldots,z)^{N+2}$. Set $k=\lfloor y^{1-\vartheta+8h}\rfloor$, $X_y=y^k$. The cyclic-kernel argument of Theorem~\ref{th:realgrowth} gives at least $(y/2-1)^k/(2\operatorname{lcm}(1,\ldots,z)^{N+2})=X_y^{1-o(1)}$ classes at each product of $k$ distinct such primes. Their number of distinct products is at least $X_y^{\vartheta-8h-o(1)}$, since $(\log y)^{N+1}=y^{o(1)}$ for fixed $h$. Monotonicity and $\log X_{y+1}/\log X_y\to1$ give the bound for every sufficiently large real $X$. Positivity and partial summation give the abscissa bound.
+\end{proof}
+
+\begin{remark}
+The same argument with Maynard's estimate
+\cite[Thm.~1.1]{Maynard} and $\vartheta=3/5$ gives the exponent
+$8/5-\epsilon$.
+\end{remark}

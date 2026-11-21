@@ -1,0 +1,24 @@
+\subsection{Nonmultiplicativity in indefinite signature}
+\begin{theorem}\label{th:indeuler}
+For every indefinite integral lattice over $\mathbb Q$ of rank $n\ge3$, neither $a_O$ nor $a_{SO}$ is multiplicative.
+\end{theorem}
+\begin{proof}
+Suppose $a_H$ is multiplicative. We first deduce
+$a_H(b)=c(b)$ for every $b$. Fix the finite family of local
+types at the primes dividing $b$ and enlarge $S$ to include them. Append squarefree $t$ coprime to this enlarged set. By the fixed-$d$ argument of Theorem~\ref{th:indmean}, averaged over labelled $t$ almost every extended genus has just one proper class. Thus the sum of $a_H(bt)$ divided by the sum of $3^{\omega(t)}$ over these $t\le X$ tends to $c(b)$. By \eqref{eq:indsquarefree} multiplicativity would make the ratio equal to $a_H(b)$ for every $X$.
+
+It remains to produce a local tuple containing two represented
+ordinary classes. Put $S=\{p:p\mid2\det B_L\}$. Choose a prime $q\notin S$ congruent to $1$ modulo $8$ and modulo every odd prime in $S$. Quadratic reciprocity gives $(\ell/q)=1$ for $\ell\in S$ and $(-1/q)=1$. The determinant of $L_q$ is a unit square, so this unimodular odd-prime lattice admits a basis with Gram matrix the identity. At $q$ replace the basis by $v_1,qv_2,\ldots,q^{n-1}v_n$, and elsewhere keep $L_p$. This gives a child $K\subset L$ of index $b=q^{n(n-1)/2}$. For spinor norms in this paragraph take the rational quadratic form $x\mapsto B(x,x)$; changing this normalization does not change the equivalence relation.
+
+All isometries of $K_q$ have square spinor norm, including improper ones. Its norm coefficients are $1,q^2,\ldots,q^{2(n-1)}$. If $h$ is an integral isometry, the first coordinate of $hv_1$ is $\pm1$ modulo $q$. One of $hv_1\pm v_1$ therefore has unit square norm and its reflection is integral and sends $hv_1$ to $\mp v_1$. Correct the sign with the reflection in $v_1$ if necessary. On the orthogonal complement divide the form by $q^2$ and repeat. This division by a square leaves all reflection norm classes unchanged. The induction proves the assertion.
+
+For a finite idele $x=(x_p)$ consider the quadratic character
+\[
+ \Xi(x)=\left(\frac{\overline{x_q q^{-v_q(x_q)}}}{q}\right)
+          \prod_{\ell\ne q}\left(\frac{\ell}{q}\right)^{v_\ell(x_\ell)} .
+\]
+It is trivial on squares and on $\mathbb Q^\times$: check rational generators $-1,q,\ell\ne q$. It is also trivial on the spinor norms of the full local stabilizers $O(K_p)$. At $q$ use the preceding induction, at $p\in S$ use $(p/q)=1$, and elsewhere the reflection-generation argument of Lemma~\ref{lem:indlocal} gives even valuation. Since the spinor norm is defined on the full orthogonal group,
+$\Xi$ applies to both proper and improper stabilizers.
+
+Choose $g_q\in SO(L_q)$ of nonsquare unit spinor norm, possible by Lemma~\ref{lem:indlocal}, and $g_p=1$ elsewhere. The patched child $K'$ with local lattices $g_pK_p$ still lies in $L$. If a rational isometry $u$ carried $K$ to $K'$, then $(u^{-1}g_p)_p$ would belong to the full local stabilizers of $K$, and $\Xi(\theta(g))$ would be $1$ by the two triviality assertions. By construction it is $-1$. Thus the tuple containing $K,K'$ contributes at least two ordinary classes and hence at least two proper classes. As every other tuple is represented, $a_H(b)>c(b)$, giving the required contradiction.
+\end{proof}

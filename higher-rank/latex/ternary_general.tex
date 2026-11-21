@@ -1,0 +1,199 @@
+\section{Ternary parent classes and marked neighbor trees}\label{sec:ternary-general}
+Let $G$ be any positive definite symmetric rational ternary Gram
+matrix, scaled to integral entries, and $\Gamma=\mathrm{SO}(L)$.
+Proper and ordinary counts coincide in dimension three.
+Theorem~\ref{th:incidence} gives the coefficients at every index;
+at unramified odd primes its local traces can be organized on trees
+whose vertices retain their global parent classes.
+
+\paragraph{All local modules.}
+Write $X_a=(1-aT)^{-1}$, $Y=(1-T^2)^{-1}$ and
+$J_p(c)=X_1^3$ or $X_1Y$ according as $(c/p)=1$ or $-1$.
+Let $u$ be a rotation preserving a lattice $E$. For $u\ne1$ let $U$
+be the rational projection onto its positive axis. Put
+$\delta=1$ if $U E_p\subset E_p$, and $\delta=0$ otherwise.
+Write $S_p=(1+(p-1)T)X_1^2$ and $A_p=1+TS_p$.
+The complete stable-subgroup table by order of $u$ is
+\[
+\begin{array}{c|l|l}
+\operatorname{ord}u&\text{prime condition}&\sum_{k\ge0}b_{E,u}(p^k)T^k\\ \hline
+1&\text{all}&X_1 X_p X_{p^2}\\
+2&p\ne2& X_1^2 X_p\\
+2&p=2,\ \delta=1&(1+3T)X_1^2 X_2\\
+2&p=2,\ \delta=0&(1-T+4T^2)X_1^2 X_2\\
+4&p\ne2& J_p(-1)\\
+4&p=2& \delta S_2+(1-\delta)A_2\\
+3&p>3& J_p(-3)\\
+3&p=2&X_1Y\\
+3&p=3&\delta S_3+(1-\delta)A_3\\
+6&p>3&J_p(-3)\\
+6&p=2&X_1Y\\
+6&p=3&X_1^2 .
+\end{array}
+\]
+Every rational proper torsion rotation in dimension three has one of
+the listed orders: its quadratic complementary characteristic polynomial
+is cyclotomic or a power of $X+1$. At the three exceptional
+order/prime pairs $(2,2),(4,2),(3,3)$ the integral algebra generated
+by $u$ is a fiber product over the residue field, and the split
+condition is precisely integral preservation by $U$. The fiber-product calculation of Section~\ref{sec:cubic} applies to
+an arbitrary stable $E_p$. Saturation under the two eigenprojections
+gives the split module; the original module is either the split module
+or a graph of residue components. In the half-turn case every graph of
+a nonzero linear form on the two-dimensional negative residue plane
+is conjugate under $\mathrm{GL}_2(\mathbb Z_2)$. In the Gaussian or
+Eisenstein case multiplication by a unit accounts for each nonzero
+residue scalar. Thus the counts are independent of any further
+embedding data. The unramified and ramified direct-product rows
+follow from the same Bezout splitting and the ideal series of the
+degree-one or degree-two valuation rings; specifically at $(6,3)$
+the factors $X-1,\Phi_6(X)$ are relatively prime over $\mathbb Z_3$.
+The projections in the three exceptional cases are
+$(1+u)/2$, $(1+u^2)/2$, and $(1+u+u^2)/3$, respectively. These calculations give the local formula at all primes, including
+those dividing $\det G$.
+
+Enumerate parent transporters by integral matrices $B$ satisfying
+$B^tGB=m^2G$ and $\det B=m^3$, subject to the column bounds
+$|B_{ij}|\le m\sqrt{G_{jj}(G^{-1})_{ii}}$, from Cauchy--Schwarz.
+These matrices give the parent transporters $B/m$. Identify parents
+by right multiplication by $\Gamma$ and retain only
+$[L:L\cap (B/m)L]\mid m$. Each retained parent contains $mL$ and
+lies in $m^{-1}L$. For a fixed torsion transporter $u$, any preserved
+parent subset is a union of cycles entirely inside the finite retained
+list; it must include the cycle of $L$. Successively adding or omitting
+the other cycles gives the sums of Theorem~\ref{th:incidence}. The projection
+test in the table uses a local lattice basis, or reduction of the
+intersection modulo a sufficiently large $p$-power. 
+
+\paragraph{Prime powers and global parent labels.}
+Take $p\nmid 2\det G$. In the self-dual neighbor tree at $p$, identify
+a vertex with the global lattice given by it at $p$ and $L$ at all
+other places. Mark a vertex if this global lattice is properly
+isometric to $L$. For a finite nonempty subtree $\mathcal T$, write $\partial\mathcal T$ for its set
+of leaves (including the unique vertex of a singleton), and let
+$E_{\mathcal T}$ be the global intersection of its vertices. Write
+$p^{j_{\mathcal T}}=[L:E_{\mathcal T}]$ for trees containing $L$.
+\begin{theorem}\label{th:ternary-hull}
+For every $k\ge0$ the actual coefficient at $p^k$ is
+\[
+ \frac1{|\Gamma|}
+ \sum_{\mathcal T}\frac1{|\partial\mathcal T|}
+  \sum_{u\in\mathrm{Stab}^+(\mathcal T)}
+      (-1)^{c(u,\partial\mathcal T)-1}
+      b_{E_{\mathcal T},u}\big(p^{\,k-j_{\mathcal T}}\big).
+\]
+Sum over subtrees with $L$ a leaf, $j_{\mathcal T}\le k$, every leaf marked, and
+no marked interior vertex of the chosen subtree. The stabilizer consists of global
+proper rational isometries preserving $\mathcal T$ and fixing $L_\ell$
+at all places $\ell\ne p$; $c$ counts cycles on leaves. This is a
+finite sum, with $b$ given by the table above. If the genus has
+one class, only singletons and edges survive.
+\end{theorem}
+\begin{proof}
+In the unanchored incidence sum proved in Theorem~\ref{th:incidence},
+take the convex hull of each parent set $F$ in the $p$-tree. Its
+leaves must lie in $F$. Conversely every subset of its marked
+vertices containing its leaves spans the tree. Intersecting all the
+vertices of the hull gives exactly the intersection of the original
+subset, since the unique geodesic between two vertices contains
+their intersection in every one of its lattices. Every hull vertex is
+on such a geodesic or is itself a leaf.
+
+Within a fixed hull, orbit--stabilizer rewrites the unanchored
+sum over orbits of $F$,
+$\sum_{[F]}|\mathrm{Stab}(F)|^{-1}\sum_{u\in\mathrm{Stab}(F)}$
+as $|\mathrm{Stab}(\mathcal T)|^{-1}\sum_{u\in\mathrm{Stab}(\mathcal T)}
+\sum_{F:uF=F}$, with the same integrands. For each $u$ the optional
+marked interior vertices form a union of cycles. Including an
+optional cycle changes the sign; the sum therefore vanishes if any
+such vertex exists. Otherwise only the leaf set remains. Marking a
+leaf as $L$ replaces the unanchored stabilizer denominator by
+$|\partial\mathcal T|\,|\Gamma|$ by the same orbit-stabilizer identity. The
+restriction $j_{\mathcal T}\le k$ bounds every vertex's distance to $L$ by
+$k$, by the symmetric Smith indices of the self-dual tree, so the
+tree sum is finite.
+\end{proof}
+
+The leaf sets also admit a graph-theoretic description. In the ball of
+radius $k$ around $L$, join two marked vertices $P,Q$ in an auxiliary
+graph if there is no third marked vertex $R$ satisfying
+$\mathrm{dist}(P,R)+\mathrm{dist}(R,Q)=\mathrm{dist}(P,Q)$.
+The leaf sets in the formula are exactly the cliques containing $L$
+whose intersection index divides $p^k$. Indeed the ball is convex,
+every interior vertex lies on a path between two leaves, and any
+member of a proposed leaf set that were interior would lie between
+two other members. The distances are obtained from the denominator of
+the relative transporter in a basis of $L$ by the self-dual Smith
+exponents. The marked vertices therefore determine the leaf sets.
+
+At $k=1$ the formula reduces to a class-sensitive expression. Let
+$A_\Gamma(p)$ count the $\Gamma$-orbits of hyperplanes of $L/pL$.
+Let $t_p$ be the number of double cosets $\Gamma g\Gamma$ of
+rational proper isometries with $[L:L\cap gL]=p$, and $r_p$ the
+number of these cosets fixed by inversion. Then
+\[
+                a_L(p)=A_\Gamma(p)-\tfrac12(t_p-r_p).
+\]
+Indeed the double cosets are the orbits of marked outgoing neighbor
+edges. Reversal induces inversion of double cosets. The intersection
+child of a fixed orbit contributes one ambient orbit and one true
+class. Each pair of distinct reversed orbits contributes two ambient
+orbits and one true class. All other hyperplane children have just
+one marked parent. Even two distinct incident neighbors have distinct
+intersection hyperplanes by the local tree construction. For any
+$p$ here, including $3$, the first term is the average over $u\in\Gamma$
+of $\sum_{\alpha\in\mathbb F_p^\times}
+(p^{\dim\ker(u-\alpha)}-1)/(p-1)$, since it counts invariant
+hyperplanes via eigenlines in the dual. For $p>3$ the contributions
+are $p^2+p+1$, $p+2$, $2+(-1/p)$ and $2+(-3/p)$ for orders
+$1$, $2$, $4$ and $3$ or $6$, respectively.
+
+For indices supported on several good primes the same cancellation
+has an exact finite form. Exclude $m=1$, and for each $p\mid m$ take a
+finite subtree $\mathcal T_p$. Put $\mathcal Q=\prod_{p\mid m}\mathcal T_p$, with $L$ prescribed
+away from these primes. Mark a tuple if its global lattice is properly
+isometric to $L$. For $u$ preserving the box and the external local
+lattices the unanchored weight is
+\[
+ \sum_{\mathcal U}(-1)^{|\mathcal U|-1}.
+\]
+Here $\mathcal U$ runs over collections of cycles of $u$ on marked
+tuples, whose projections together contain every leaf of every factor
+(a singleton counts as a leaf). The whole contribution is this weight
+times $b_{E_{\mathcal Q},u}(m/[P:E_{\mathcal Q}])$, summed over $u$ and divided by the
+global proper stabilizer order of $\mathcal Q$; $P$ is any vertex and $E_{\mathcal Q}$ the
+intersection of all vertices. Use one representative of each global
+box class that contains a marked tuple, with $[P:E_{\mathcal Q}]\mid m$.
+Indeed coordinatewise convex hull gives the same intersection at
+each prime; a union of cycles spans the box precisely by this leaf
+test. Marking one tuple bounds all relevant trees by the corresponding
+index exponents and hence proves finiteness, as above. The parent
+class marks occur on the global tuples, and need not factor as
+independent choices in the local trees. At the remaining primes the
+all-index incidence expression and the explicit stable-module table
+apply without any tree assumption.
+
+For $L=\langle1,1,11\rangle$ and $p=3$, the line spanned by $(1,0,1)$
+modulo three is isotropic. The corresponding neighbor cannot be
+isometric to $L$: its intersection hyperplane omits $e_1$, and the
+only rational unit vectors with denominator dividing three are
+$\pm e_1,\pm e_2$ (multiply the norm equation by nine). Thus it
+has at most two unit vectors whereas $L$ has four. The local
+neighbor is nevertheless in the proper genus. Consequently it is an
+unmarked vertex in the theorem.
+
+For $G=\operatorname{diag}(1,1,7)$ and $p=3$, a marked vertex
+can occur beyond an unmarked intermediate vertex. Every rational
+unit vector with denominator dividing three is one of $\pm e_1,\pm e_2$ or
+$(\pm1,\pm1,\pm1)/3$. No vector of the latter type is perpendicular
+to either unit coordinate vector or any other vector of the latter
+type. Thus a proper isometry of denominator dividing three must send
+$e_1,e_2$ to the coordinate vectors and hence be integral. No adjacent
+vertex is marked. But
+\[
+ A=\begin{pmatrix}-7&-2&-14\\-2&-7&14\\-2&2&5\end{pmatrix},
+ \qquad A^tGA=81G,\qquad\det A=729 .
+\]
+The rational rotation $A/9$ has exact denominator nine, so its marked
+vertex lies at distance two. The path between these two marked
+endpoints has precisely an unmarked interior vertex.

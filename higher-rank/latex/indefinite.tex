@@ -1,0 +1,98 @@
+\section{Indefinite spaces of rank at least three}\label{sec:indef}
+Let $V$ have indefinite signature and rank $n\ge3$. The HNF
+bound and the orientation-union identity continue to hold, while
+integral stabilizers may be infinite. We use local isometry types
+and embedding spinor norms to count the represented classes. Set
+\[
+ c_p(e)=\#\{\text{local types of index-}p^e\text{ sublattices of }L_p\},\quad
+ c(m)=\prod_{p^e\Vert m}c_p(e),\quad c_p(0)=1 .
+\]
+
+\subsection{The spinor norm and represented classes}
+The adelic spinor-genus description and Eichler's theorem give
+one proper class in each proper spinor genus of an indefinite
+rational lattice of rank at least three \cite[\S9.2]{SP}. More explicitly, write $\theta$ for the spinor norm, normalized on a reflection in $v$ by $Q(v)$ modulo squares. On the proper group this convention is independent of a scalar in the quadratic form. For an integral lattice $K$ in this space the proper classes in its genus are parametrized, with $K$ as origin, by the finite elementary abelian group
+\begin{equation}\label{eq:spinC}
+ C(K)=\mathbb A_f^\times/
+ \bigl(\mathbb Q^\times\mathbb A_f^{\times2}
+       \prod_p\theta(SO(K_p))\bigr).
+\end{equation}
+Products of local subgroups are taken in the ideles, with
+squareclasses lifted to multiplicative groups. There is no positivity
+restriction at the indefinite real place. Strong approximation for the spin group and the spinor-norm
+image statements in \cite[\S9.2]{SP} apply to the indefinite space.
+
+The ambient spinor-norm image follows from an indefinite ternary
+subspace. Its even Clifford algebra is a quaternion algebra
+split at infinity, and conjugation on the ternary space has spinor norm
+the reduced norm modulo squares. Every nonzero rational number is a
+reduced norm, and the reduced norm is surjective at every finite place.
+
+Improper local isometries introduce no additional genera: choose a
+vector $v$ of minimal valuation of nonzero $Q(v)$ in the integral local
+lattice. Then $Q(v)$ divides $Q(v+w)-Q(v)-Q(w)$ for every $w$, so
+reflection in $v$ is an integral improper isometry, also at two.
+
+For each prime dividing $m$, choose a local type and an embedding
+into $L_p$, taking $L_p$ at all other primes. Chinese-remainder
+patching gives a reference lattice $K\subset L$ of index $m$.
+Different tuples have distinct genera, and all $c(m)$ tuples occur. In \eqref{eq:spinC} let $T(K,L)$ be the set of products of the images under $\theta$ of the sets
+\[
+ \{g_p\in SO(V_p):g_p K_p\subset L_p\}.
+\]
+Use integral elements at almost all places. The represented proper classes in this genus are counted by $|T(K,L)|$: patching the local images yields the corresponding spinor class, and every represented class arises from such local embeddings. 
+One $g_p$ per local image suffices, since the stabilizer has
+trivial image in $C(K)$. For $p\nmid m$, the local image equals $L_p$ and the stabilizer
+has trivial image in $C(K)$.
+
+For the ordinary count fix a rational reflection $r$ and choose local improper isometries $j_p\in O(K_p)$, equal to $r$ wherever $r$ is integral except at finitely many places. Put $\delta_K=[\theta((rj_p)_p)]$. This class is independent of the choices of $j_p$; changing $r$ changes the product by a rational proper factor. Reversal acts on $C(K)$ by translation by $\delta_K$, since conjugation by an orthogonal transformation preserves the spinor norm. Thus the number of represented ordinary classes is the cardinality of the image of $T(K,L)$ in $C(K)/\langle\delta_K\rangle$. Summing these formulas over the $c(m)$ tuples gives both actual coefficients at all indices.
+
+\begin{lemma}\label{lem:indlocal}
+For $p\nmid 2\det B_L$, $c_p(1)=3$. Each of these types forms a single $SO(L_p)$-orbit of sublattices. For each child $K_p$ its full integral group $SO(K_p)$ has all unit squareclasses as spinor norms. For the isotropic hyperplane type $SO(K_p)$ has all local spinor norms. Moreover $\theta(SO(L_p))$ consists of unit squareclasses.
+\end{lemma}
+\begin{proof}
+A kernel is a hyperplane modulo $p$. Normals are isotropic, of square unit norm, or of nonsquare unit norm. The nonsingular finite quadratic space of rank at least three contains a hyperbolic plane and represents both unit classes. Witt extension gives transitivity on each set of normal lines under the finite orthogonal group. Isometries over $\mathbb F_p$ are products of reflections in nonisotropic vectors; lift each vector to a vector with unit norm to obtain an integral isometry. The determinant can be corrected in a hyperplane stabilizer: in the nonisotropic case use a unit vector in the perpendicular space, and in the isotropic case use the complement of a hyperbolic plane, of rank $n-2\ge1$. Thus each set is a single proper parent orbit.
+At a nonisotropic line the kernel has a unimodular rank $n-1$ summand and a unary summand scaled by $p^2$. The latter's unit determinant squareclass distinguishes the two choices, by its intrinsic top Jordan constituent. 
+
+At an isotropic line lift a hyperbolic basis by Hensel lifting and orthogonal splitting. Its kernel replaces the hyperbolic plane $\mathbb H_p$ by $p\mathbb H_p$ (scale of its form) and keeps a unimodular complement. This has a different Jordan decomposition. 
+
+Any unimodular summand of rank at least two represents all unit squareclasses: over $\mathbb F_p$ this follows for a split binary plane by multiplication and for an anisotropic binary plane by the finite-field norm. Lifts preserve the unit squareclass. Products of unit-norm reflections then give every unit spinor class. The same argument in $p\mathbb H_p$ gives all units by products of reflections of norms $pu,pv$; these are integral on the scaled plane. Composing one such reflection with a unit-norm reflection in the complement adds an odd valuation class. 
+
+Finally at a unimodular odd-prime lattice every integral orthogonal transformation is a product of unit-norm reflections. For a unit diagonal basis vector $v$ at least one of $hv\pm v$ has unit norm, since the sum of their norms is $4Q(v)$. Use that reflection, if necessary the reflection in $v$, then induct on its unimodular complement. This proves the last assertion.
+\end{proof}
+Consequently, for every indefinite parent of rank $n\ge3$,
+\begin{equation}\label{eq:indsquarefree}
+ a_O(t)=a_{SO}(t)=3^{\omega(t)}\qquad(t\ {\rm squarefree},\ (t,2\det B_L)=1).
+\end{equation}
+For a fixed tuple, at $p\mid t$ the transporter from the reference child is $SO(L_p)SO(K_p)$ by the single-orbit assertion. Its spinor norm has trivial image in $C(K)$. Elsewhere the same conclusion holds trivially. Thus exactly one proper class is represented per tuple.
+
+\subsection{The leading constant in indefinite signature}
+\begin{theorem}\label{th:indmean}
+For each of $H=O,SO$, the abscissa is $1$ and
+\[
+ \sum_{m\le X}a_H(m)\sim \frac{C_L}{2}X(\log X)^2,\qquad
+ C_L=\prod_p\left[(1-p^{-1})^3\sum_{e\ge0}\frac{c_p(e)}{p^e}\right]>0,
+\]
+and in particular $(s-1)^3Z_H(s)\to C_L$ as real $s\downarrow1$.
+\end{theorem}
+\begin{proof}
+Let $S$ contain the primes of $2\det B_L$. Local Jordan splitting bounds $c_p(e)\ll_{n,L}(1+e)^n$ uniformly: the determinant valuation is $v_p(\det B_L)+2e$, and there are at most $(1+v_p(\det B_L)+2e)^n$ ordered scale lists counted with repetition for the $n$ basis positions. At odd $p$ a unimodular constituent is specified by its rank and its unit determinant squareclass. At two there are boundedly many unimodular types of bounded rank, by the dyadic classification \cite{AGM}. These bounds include imprimitive children. 
+
+The multiplicative $c(m)$ therefore has series $\zeta(s)^3 V(s)$ with $V(s)$ an absolutely convergent Dirichlet series for $\Re s>1/2$: at primes outside $S$ the linear Euler coefficient cancels by Lemma~\ref{lem:indlocal}. $V(1)=C_L$ is positive by absolute convergence and positive local values. The elementary estimate $\sum_{j\le x}d_3(j)=x(\log x)^2/2+O(x(1+\log x))$ follows by summing $\lfloor x/(ab)\rfloor$ and the harmonic sum twice. Convolution and dominated convergence give $\sum_{m\le X}c(m)\sim C_L X(\log X)^2/2$.
+
+Write $m=dt$ where $d$ contains all powers at $S$ and all prime powers of exponent at least two outside $S$; $t$ is squarefree and coprime to $S_d=S\cup\{p:p\mid d\}$. At every place outside $S_d$ the local spinor norm of a child stabilizer contains all units. A finite idele may be divided by a positive rational number to make it a unit at all finite places. Its remaining class is generated by the unit squareclasses at $S_d$. Hence the number of proper classes per genus is at most $4\cdot2^{|S_d|}$, with the factor 4 allowing for the dyadic units. This gives a summable majorant after conditioning on $d$, since
+\[
+ \sum_{d}2^{|S_d|}c(d)/d<\infty .
+\]
+Indeed all primes outside $S$ dividing such $d$ occur with exponent at least two, and the local polynomial bounds just proved apply. The inequality $\sum_{t\le y}\mu^2(t)3^{\omega(t)}\ll y(1+\log y)^2$ follows already from $3^{\omega(t)}\le d_3(t)$ for squarefree $t$.
+
+Fix $d$ and a tuple of local types at $S_d$. Realize each generator of the product of unit squareclasses at $S_d$ by the residues of odd primes in a reduced arithmetic progression modulo $8\prod_{p\in S_d,\,p>2}p$. CRT supplies the progressions, after excluding finitely many primes. If for each of these finitely many generators some such $q\mid t$ carries the isotropic local type, the proper genus has only one class. In fact the idele supported at $q$ with uniformizer $q$ is trivial in \eqref{eq:spinC} by Lemma~\ref{lem:indlocal}. Dividing it by rational $q$ kills the prescribed unit tuple at $S_d$ and leaves only units at other primes, where those units are in the stabilizer image. Thus all generators vanish. Both actual counts give one class for this tuple.
+
+For a particular generator choose a finite subset $F$ of its prime progression. Among squarefree $t$ coprime to $S_d$, giving three labels to every prime, the asymptotic proportion of labelled tuples using no isotropic label at any $q\in F$ equals
+\[
+ \prod_{q\in F}\frac{1+2/q}{1+3/q}.
+\]
+At these primes the local factor $1+3q^{-s}$ is replaced by
+$1+2q^{-s}$. Extracting $\zeta(s)^3$ from the two products and
+applying the preceding convolution estimate gives the proportion. The proportions tend to zero as $F$ exhausts the progression, by the divergence of the reciprocals of primes in reduced residue classes. A finite union over generators shows that all exceptional labelled tuples at fixed $d$ contribute $o_d(X(\log X)^2)$, even after multiplying by the fixed genus-size bound. Finally truncate the summable majorant in $d$ to pass to the full sum. Thus the excess of either actual count over the genus count is $o(X(\log X)^2)$. Partial summation gives the stated real boundary limit, divergence at $1$, and absolute convergence to its right.
+\end{proof}

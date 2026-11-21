@@ -1,0 +1,36 @@
+\subsection{The first difference between orientations in indefinite signature}
+\begin{theorem}\label{th:indorient}
+For every indefinite parent of even rank \(n\ge4\), the constants in Theorem~\ref{th:indsecond} satisfy \(K_{SO}>K_O>0\). In particular
+\[
+ \sum_{m\le X}\bigl(a_{SO}(m)-a_O(m)\bigr)
+ \sim\frac{K_{SO}-K_O}{\Gamma(5/2)}X(\log X)^{3/2}.
+\]
+In odd rank the two coefficient sequences are identical.
+\end{theorem}
+\begin{proof}
+At each base tuple use the proper group \(C\), its reversal element \(\delta_K\) and its support \(T\). The characters of the ordinary quotient are exactly the proper characters taking value \(+1\) on \(\delta_K\). The nonconstancy condition on \(T\) and the Euler factors
+\(J_{\ker\chi}\) are unchanged under this restriction. The difference \(K_{SO}-K_O\) is therefore the absolutely convergent sum of positive terms \(k_{\ker\chi}/d\) over base characters nonconstant on \(T\) and taking value \(-1\) on \(\delta_K\). We construct such a term.
+
+Choose \(q\) as in Theorem~\ref{th:indeuler} and choose a nonsquare unit \(u\in\mathbb Z_q^\times\). As \(n\) is even, the form with Gram \(uI_n\) has square unit determinant, the same squareclass as \(L_q\). Classification of nonsingular symmetric forms over \(\mathbb F_q\) and lifting give a basis of \(L_q\) with this Gram matrix. Starting from the residue-field congruence modulo \(q\), the
+matrix square-root correction of Lemma~\ref{lem:spincompute}
+gives an integral lift, since \(q\) is odd. In this basis take the child with successive axis scales \(1,q,\ldots,q^{n-1}\) and keep \(L_p\) elsewhere. Write \(K\) for the resulting global child. At \(q\), dividing the form by \(u\) gives the separated diagonal square form of Theorem~\ref{th:indeuler}. Its entire intrinsic orthogonal group has square spinor norm for the divided form. Restoring \(u\) multiplies the spinor norm of a product of \(k\) reflections by \(u^k\), with \((-1)^k\) its determinant. Consequently every proper intrinsic spinor norm at \(q\) is a square, and every improper one is a nonsquare unit modulo squares.
+
+The character \(\Xi\) of Theorem~\ref{th:indeuler} therefore annihilates all proper stabilizer norms of \(K\) and descends to \(C(K)\). In the definition of \(\delta_K\) a rational reflection contributes trivially to \(\Xi\) by rational reciprocity. The local improper stabilizers at \(p\ne q\) also contribute trivially, since \((p/q)=1\) for \(p\in S\), and their spinor norms at the other odd unimodular places have even valuation. The improper stabilizer at \(q\) contributes \(-1\), so \(\Xi(\delta_K)=-1\). An element of \(SO(L_q)\) of nonsquare unit spinor norm takes \(K_q\) to another sublattice in \(L_q\) of the same local type. Extending by the identity at the other places changes the value of \(\Xi\) on the occurring support. Thus this character is nonconstant on the represented support and
+takes value $-1$ on $\delta_K$, yielding a positive summand in
+$K_{SO}-K_O$. The asymptotic follows by subtracting the two
+expansions in Theorem~\ref{th:indsecond}. For odd rank use the central improper isometry \(-I\).
+\end{proof}
+
+
+\begin{corollary}
+In even indefinite rank at least four, the set of indices for which \(a_{SO}(m)>a_O(m)\) has a natural density strictly between zero and one. Write \(\mathcal D_*\) for those base indices \(d\) that have at least one tuple with \(\delta_K\ne0\) in its proper group and \(|T|>1\). Its density equals
+\[
+ \frac1{\zeta(2)}\sum_{d\in\mathcal D_*}\frac1d
+                   \prod_{p\in S_d}(1+p^{-1})^{-1}.
+\]
+\end{corollary}
+\begin{proof}
+For a fixed tuple the difference counts pairs of distinct represented proper labels identified by reversal after taking the quotient by \(D\). If \(\delta_K=0\) or \(|T|=1\), no extension of this tuple contributes. Otherwise take two labels with difference \(w\ne0\). For \(w=\delta_K\), choosing the nonisotropic labels at every new prime already gives a pair. If \(w\ne\delta_K\), then \(w+\delta_K\ne0\) and its span does not contain \(\delta_K\). There is a prime progression of positive density on which \(v_p=w+\delta_K\), by the unit generation and congruence description preceding Theorem~\ref{th:indsecond}. If \(t\) contains a prime in this progression, give that prime the isotropic label and all others nonisotropic labels. The two distinct quotient labels differ by the nonzero image of \(\delta_K\), giving the desired pair.
+
+Among squarefree \(t\) coprime to \(S_d\), the proportion divisible by no prime in this progression is zero. Indeed for a finite subset of its primes the proportion avoiding it tends to the product of \((1+1/p)^{-1}\) over that subset, by the elementary squarefree density formula. These products tend to zero by divergence of the reciprocal primes in the progression. Thus the conditional proportion with an orientation gap tends to one for each \(d\in\mathcal D_*\) and is zero otherwise. The density of the component indexed by \(d\) is the displayed weight, and the upper bound \(X/d\) allows dominated convergence since \(\sum_{d\in\mathcal D}1/d<\infty\). The constructed nonsquare diagonal tuple belongs to \(\mathcal D_*\), whereas \(d=1\) does not. Both it and the complement have positive weight.
+\end{proof}

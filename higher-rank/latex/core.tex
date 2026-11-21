@@ -1,0 +1,82 @@
+\section{Restoration at cyclic discriminant primes}\label{sec:core}
+Let $V$ be a positive definite rational quadratic space of dimension
+$n\ge2$, $L$ a full lattice, and $B$ an integral symmetric polarization obtained by scaling
+the form. After fixing an orientation of $V$, write
+$H=O(V)(\mathbb Q)$ or $SO(V)(\mathbb Q)$,
+$\Gamma_H(U)=\{g\in H:gU=U\}$, and $c_H=|H\cap\{1,-1\}|$.
+Write $a_H(m)$ for the corresponding represented-class count.
+
+An isometry between full lattices extends uniquely over $\mathbb Q$;
+it is proper precisely when its determinant in oriented bases is $+1$.
+Positive rational rescaling of $B$ leaves the isometry groups and
+indices unchanged. An index-$m$ restriction has Gram determinant
+$m^2\det B_L$. The number $b_n(m)$ of raw index-$m$ subgroups
+is given by Hermite normal form, with local series
+$\prod_{j=0}^{n-1}(1-p^jT)^{-1}$.
+
+For any finite set $S$ containing the prime divisors of $2\det B_L$, put $M^\#=\{x:B(x,M)\subset\mathbb Z\}$. Call $p^e\Vert [L:M]$ \emph{regular} if $p\notin S$ and $(M^\#/M)_p$ is cyclic, where $e>0$. Write $[L:M]=dt$ with $t$ the product of all the regular prime powers. Call $N$ a core if $N\subset L$ has no regular prime divisor of its index. Let $\mathcal C_H(d)$ consist of the $H$-classes of cores of index $d$ actually represented in $L$. Both definitions refer to the chosen $S$.
+
+\begin{lemma}\label{lem:local}
+At $p\notin S$, with $P=L_p$ unimodular, regular index-$p^e$ sublattices are the kernels of primitive covectors on $P/p^eP$ up to unit multiples whose reductions have nonisotropic normal. Each has a unique integral overlattice of relative index $p^e$ in $V_p$.
+\end{lemma}
+\begin{proof}
+Let $r$ be the dimension of the image of $M_p$ in $P/pP$. The rank of the reduced Gram matrix of $M_p$ is at most $r\le n-1$. Cyclicity of the discriminant group, of order $p^{2e}$, is equivalent by Smith form to Gram rank $n-1$. This forces $r=n-1$, equivalently $P/M_p$ is cyclic, and the image hyperplane has nondegenerate restriction. Conversely these two conditions imply Gram rank $n-1$. The perfect pairing identifies the annihilator with a normal line, giving the covector description. Every integral overlattice is contained in $M_p^\#$, and a cyclic group of order $p^{2e}$ has exactly one subgroup of order $p^e$. Existence is supplied by $P$.
+\end{proof}
+
+When $p\nmid d$ and $p\notin S$, one has $N_p=L_p$. For
+$h\in\Gamma_H(N)$, let $g_{p,h}(e)$ count the kernels in
+Lemma~\ref{lem:local} fixed by $h$, with $g_{p,h}(0)=1$.
+Equivalently, count primitive rows $v$ modulo $p^e$, up to unit
+rescaling, for which $v B_{N}^{-1}v^t$ is a unit and
+$vh\in(\mathbb Z/p^e)^\times v$. The inverse Gram matrix is taken
+over $\mathbb Z_p$.
+\begin{theorem}\label{th:core}
+For all $m\ge1$ one has
+\[
+ a_H(m)=
+ \sum_{\substack{dt=m,\ (d,t)=1\\p\mid t\Rightarrow p\notin S}}
+ \sum_{[N]\in\mathcal C_H(d)}
+ \frac1{|\Gamma_H(N)|}\sum_{h\in\Gamma_H(N)}
+       \prod_{p^e\Vert t}g_{p,h}(e).
+\]
+\end{theorem}
+\begin{proof}
+Given $M$, enlarge $M_p$ at each regular prime by the unique subgroup in the lemma, leaving every other completion untouched. The unique global lattice with those completions is their intersection in $V$, equivalently the inverse image of the sum of the indicated primary subgroups in $M^\#/M$. The restored lattice lies in $L$ and is a core of index $d$.
+The index, discriminant module and selected primary subgroups are
+intrinsic to $M$, so restoration commutes with rational isometries.
+
+Conversely, choose a representative $N\subset L$ of a core class. At primes dividing $t$ insert any of the indicated local kernels in $N_p$ and leave the other completions fixed. The Chinese remainder theorem gives a unique child in $N$, and restoration returns $N$. Every represented child with this core class is isometric under $H$ to one obtained from this representative, since transporting to $N$ places its image inside $N\subset L$. Two children of this same representative are equivalent exactly under $\Gamma_H(N)$. Burnside's lemma applied to the resulting product of local kernel sets gives the formula.
+\end{proof}
+
+The core-class sum also has a raw-lattice form. Let
+$e_H(N,L)$ count integral overlattices $W$ of a raw core $N$ of
+relative index $d$ that are $H$-isometric to $L$. It is computed by enumerating order-$d$ isotropic subgroups of
+$N^\#/N$ for the discriminant bilinear pairing and testing the
+isometry type of their inverse images, with the prescribed
+norm-integrality convention. Counting the isometries $\sigma\in H$ with $\sigma N\subset L$
+by the overparent $\sigma^{-1}L$ gives
+$e_H(N,L)|\Gamma_H(L)|$; counting by the image $\sigma N$ gives the
+number of raw images of $N$ times $|\Gamma_H(N)|$.
+Hence the weight for a raw core is
+$|\Gamma_H(N)|/(e_H(N,L)|\Gamma_H(L)|)$.
+
+Integral isometries and automorphism groups can be enumerated
+finitely. In $U^t A U=B'$, the $j$th column $v$ satisfies
+$v_i^2\le B'_{jj}(A^{-1})_{ii}$ by Cauchy--Schwarz; the remaining
+inner products and the determinant complete the isometry test.
+
+\subsection{The local factors}
+Let $P_r(p)$ count nonisotropic lines in a nonsingular $r$-dimensional quadratic space over $\mathbb F_p$, with $P_0=0$. For $r>0$ and odd $p$ it equals
+\[
+ p^{r-1}-
+ \begin{cases}
+ \left(\frac{(-1)^{r/2}\det B}{p}\right)p^{r/2-1},&r\ \mathrm{even},\\
+ 0,&r\ \mathrm{odd}.
+ \end{cases}
+\]
+Indeed diagonalize the form and count zeros by additive character orthogonality. Frequency zero gives $p^{r-1}$ affine zeros. At each nonzero frequency $u$ the diagonal Gauss sums have product $\chi(u)^r\chi(\det B)G^r$, where $\chi$ is the quadratic character and $G^2=\chi(-1)p$. The latter identity follows from $\bar G=\chi(-1)G$ and $G\bar G=p$ by additive orthogonality. Sum over $u$, subtract the zero count from $p^r$, then divide by $p-1$. For scalar $h$ the local series is therefore
+\begin{equation}\label{eq:goodfactor}
+ 1+\sum_{e\ge1}g_{p,1}(e)T^e
+ =1+\frac{P_n(p)T}{1-p^{n-1}T}.
+\end{equation}
+There are $p^{(e-1)(n-1)}$ lifts of each line, by fixing one unit coordinate to one. If $p\nmid 2\operatorname{ord}(h)$, a fixed nonisotropic line has eigenvalue $+1$ or $-1$ modulo $p^e$, since its eigenvalue has square one. For an even multiple $k$ of the order prime to $p$, the projectors $k^{-1}\sum_{j=0}^{k-1}(\pm h)^j$ onto these two summands commute with reduction. Their images are nondegenerate and split off orthogonally since the projectors are self-adjoint. The nonconstant part of \eqref{eq:goodfactor} for $h$ is the sum of $P_{r_\pm}(p)T/(1-p^{r_\pm-1}T)$ over its nonzero eigenspaces, using the ranks and determinants of these summands. At every excluded prime the finite congruence test still applies.

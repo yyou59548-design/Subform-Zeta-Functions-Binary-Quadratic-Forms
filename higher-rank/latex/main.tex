@@ -1,0 +1,241 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[margin=1.02in]{geometry}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{xurl}
+\hypersetup{
+ pdftitle={Subform Zeta Functions of Integral Quadratic Lattices in Arbitrary Rank},
+ pdfauthor={Zhanhe Zhang},
+ pdfsubject={Intrinsic isometry classes and zeta functions of integral quadratic lattices},
+ pdfkeywords={quadratic lattices, subform zeta functions, spinor genera, orientation}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{mainthmA}{Theorem A (positive definite lattices)}
+\newtheorem*{mainthmB}{Theorem B (orientation and parity)}
+\newtheorem*{mainthmC}{Theorem C (indefinite lattices)}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\setlength{\emergencystretch}{2em}
+\title{Subform Zeta Functions of Integral Quadratic Lattices\\in Arbitrary Rank}
+\author{Zhanhe Zhang}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a fixed nondegenerate integral quadratic lattice, we count
+intrinsic isometry classes of finite-index sublattices under ordinary
+and proper isometry. For positive definite lattices of rank $n\ge2$,
+we obtain two exact coefficient formulas, one based on restoring
+lattices at primes with cyclic discriminant group and the other on
+signed incidence among rationally isometric parents. The resulting Dirichlet series extend meromorphically to $\Re s>n-1$
+and have a unique simple pole there, at $s=n$. Their summatory coefficients
+have main terms of order $X^n$, with errors
+$O_{L,\varepsilon}(X^{n-1+\varepsilon})$.
+For a nondegenerate lattice of arbitrary signature, ordinary and proper
+counts agree at every index if and only if the rank is odd. In indefinite
+rank at least three, local embedding spinor norms determine the represented
+spinor classes. The resulting counting functions have
+a common leading term of order $X(\log X)^2$ and a strictly positive
+secondary term of order $X(\log X)^{3/2}$; neither series has a
+meromorphic germ at $s=1$. For the cubic ternary lattice, an all-index formula exhibits a
+square-root singularity at $s=2$.
+\end{abstract}
+\noindent\textit{2020 Mathematics Subject Classification.} Primary 11E12, 11E16, 11M41; Secondary 11H06.\\
+\noindent\textit{Keywords.} Integral quadratic lattices, subform zeta functions, intrinsic isometry, lattice embeddings, spinor genera, orientation.
+
+\section{Introduction}
+
+\subsection{Intrinsic isometry classes and earlier work}
+
+Let $L$ be an integral lattice in a nondegenerate quadratic space $(V,Q)$
+over $\mathbb Q$. We count the isometry classes represented by the
+restrictions of $Q$ to finite-index subgroups $M\subseteq L$. Such
+isometries need not preserve $L$, so their classes may identify distinct
+orbits under the automorphism group of the parent.
+
+Fix an orientation of $V$ and let $H$ denote either $O(V)(\mathbb Q)$
+or $SO(V)(\mathbb Q)$. Write $a_H(L;m)$ for the number of represented
+$H$-isometry classes at index $m$, and set
+\begin{equation}\label{eq:introdef}
+ Z_H(L;s)=\sum_{m\ge1}\frac{a_H(L;m)}{m^s},\qquad
+ \zeta_L^{\rm GL}(s)=Z_O(L;s),\qquad
+ \zeta_L^{\rm SL}(s)=Z_{SO}(L;s).
+\end{equation}
+We suppress $L$ when fixed. Ordinary and proper isometries have
+determinant $\pm1$ and $1$, respectively; a represented class has a
+representative contained in $L$. In rank one both series equal
+$\zeta(s)$. Negating a definite form does not change either count.
+
+For $L=\mathbb Z^3$ with its standard quadratic form, the proper
+automorphism group has $241$ orbits on index-$71$ sublattices,
+representing only $240$ intrinsic classes (Theorem~\ref{thm:cubic-all}).
+The remaining identification comes from a rational isometry moving $L$.
+
+Kim, Lee and Lee introduced these series for positive definite
+binary forms of fundamental discriminant \cite{KLL} and subsequently
+studied the rational hyperbolic plane \cite{Hyperbolic}.
+The nonmaximal binary case under a generic-unit hypothesis was treated
+by Zhang \cite{Zhang}.
+\subsection{Main results}
+
+\begin{mainthmA}
+Let $L$ be a positive definite integral lattice of rank $n\ge2$ and
+$H\in\{O(V)(\mathbb Q),SO(V)(\mathbb Q)\}$. For every $m\ge1$,
+$a_H(L;m)$ is given by both the intrinsic core-restoration formula of
+Theorem~\ref{th:core} and the finite parent-incidence formula of
+Theorem~\ref{th:incidence}. Moreover,
+\[
+ Z_H(L;s)=\zeta(s-n+1)D_H(s)+E_H(s),
+ \qquad \Re s>n-1,
+\]
+where $D_H$ and $E_H$ are represented by absolutely convergent Dirichlet
+series in this half-plane. The abscissa of convergence of $Z_H$ is $n$;
+its only pole in $\Re s>n-1$ is simple, at $s=n$, with residue $R_H>0$.
+For every $\varepsilon>0$,
+\begin{equation}\label{eq:intropositive}
+ \sum_{m\le X}a_H(L;m)
+ =\frac{R_H}{n}X^n+O_{L,\varepsilon}(X^{n-1+\varepsilon}).
+\end{equation}
+\end{mainthmA}
+
+For $n\ge3$, the fixed-parent coefficient sequences are
+nonmultiplicative (Theorem~\ref{th:nonmult}), although the scalar
+genus mass admits an Euler product (Section~\ref{sec:genusmass}).
+
+In odd rank, $-I$ reverses orientation while preserving every lattice.
+In even rank, a chiral ordinary class may have two proper orientations
+with only one represented in $L$.
+
+\begin{mainthmB}
+Let $L$ be any nondegenerate integral quadratic lattice of positive rank
+$n$, of arbitrary signature. Then
+\[
+ a_O(L;m)=a_{SO}(L;m)\text{ for every }m\ge1
+ \quad\Longleftrightarrow\quad n\text{ is odd}.
+\]
+If $n$ is even, there exist a positive integer $b$ and a finite set of
+primes $S'$ depending on $L$ such that
+\[
+ a_{SO}(L;bt)>a_O(L;bt)
+ \qquad\text{whenever }\gcd\!\left(t,\prod_{p\in S'}p\right)=1.
+\]
+In particular, the two sequences differ on a set of indices of positive
+natural density.
+\end{mainthmB}
+
+In even positive definite rank the residues satisfy
+$\tfrac12R_{SO}\le R_O<R_{SO}$, with equality on the left precisely when
+the parent admits an improper automorphism
+(Theorem~\ref{th:orientation}). Section~\ref{sec:quaternary} gives
+explicit even-rank families, including cases where orientation depends
+on the choices at several primes.
+
+In indefinite rank at least three, lattice stabilizers may be
+infinite. Eichler's theorem gives one proper class per proper spinor
+genus \cite[\S9.2]{SP}; local embedding spinor norms determine which
+classes are represented in $L$.
+
+\begin{mainthmC}
+Let $L$ be an indefinite integral lattice of rank $n\ge3$, with either
+choice $H=O$ or $SO$. Its represented-class coefficients at every index
+are determined by local lattice types and the spinor-norm images of
+admissible embeddings, as described in Section~\ref{sec:indef}. There are
+constants $C_L>0$ and $K_H>0$ such that
+\begin{equation}\label{eq:introindefinite}
+ \sum_{m\le X}a_H(L;m)
+ =\frac{C_L}{2}X(\log X)^2
+ +\frac{K_H}{\Gamma(5/2)}X(\log X)^{3/2}
+ +o_L\bigl(X(\log X)^{3/2}\bigr).
+\end{equation}
+The leading constant $C_L$ is the same for the two orientation
+conventions, and neither corresponding Dirichlet series has a meromorphic
+germ at $s=1$.
+\end{mainthmC}
+
+For squarefree $t$ coprime to $2\det B_L$, one has
+$a_O(t)=a_{SO}(t)=3^{\omega(t)}$. In even indefinite rank at least four,
+$K_{SO}>K_O$ (Theorem~\ref{th:indorient}).
+
+\subsection{Methods and relation to other counting problems}
+
+At good primes, a cyclic child discriminant group uniquely determines
+an integral overparent. Restoration commutes with rational isometries,
+reducing the count of regular extensions to the automorphism group of
+the restored core (Section~\ref{sec:core}).
+
+The signed incidence formula accounts for children contained in
+several rationally isometric copies of $L$
+(Theorem~\ref{th:incidence}). For the cubic lattice, local neighbor
+trees and quaternionic rotations give explicit coefficients
+\cite{Baake,BaakeZeiner,Chenevier,Zeiner,Voight}.
+
+For indefinite lattices, character expansions of the represented
+spinor-norm supports produce the $5/2$ exponent in Theorem C. The
+definite local computations also use the theory of invariant-submodule
+zeta functions \cite{Solomon,Rossmann}. The related reconstruction
+problem for integral forms was studied by Chan and Oh \cite{ChanOh}.
+
+Remark~1.7 and Conjecture~7.2 of the original Kim--Lee--Lee
+preprint \cite{KLLpre} concern higher-rank extensions and analytic
+properties, respectively. Corollary~\ref{cor:KLL} establishes the
+scalar and nonscalar assertions. For the determinant-minus-one sum,
+the conclusion depends on parity: it is holomorphic on $\Re s>n-1$
+in even rank, whereas in odd rank the improper scalar $-I$ contributes
+and the sum equals $Z_O/2$.
+
+\subsection{Examples and organization}
+
+The positive definite theory occupies Sections~\ref{sec:core}--\ref{sec:genusmass},
+with ternary and even-rank applications in Sections~\ref{sec:cubic}
+and~\ref{sec:quaternary}. Sections~\ref{sec:indef}--\ref{sec:realbinary}
+treat indefinite lattices, followed by the parity criterion in
+Section~\ref{sec:allparity}.
+
+\input{core}
+\input{incidence}
+\input{analytic}
+\input{genus}
+\input{symmetry}
+\input{mates}
+\input{ternary}
+\input{ternary_general}
+\input{quaternary}
+\input{varyrank}
+\input{indefinite}
+\input{local_spin}
+\input{indef_euler}
+\input{spinor_boundary}
+\input{spinor_orders}
+\input{indef_orientation}
+\input{spinor_density}
+\input{indef_binary}
+\input{binary_euler}
+\input{real_growth}
+\input{real_largenorm}
+\input{parity}
+\begin{thebibliography}{99}
+\bibitem{AGM} D. Allcock, I. Gal and A. Mark, The Conway--Sloane calculus for $2$-adic lattices, \emph{Enseign. Math.} \textbf{66} (2020), 5--31. \url{https://ems.press/journals/lem/articles/17165}.
+\bibitem{Baake} M. Baake, Solution of the coincidence problem in dimensions $d\le4$, in \emph{The Mathematics of Long-Range Aperiodic Order} (R. V. Moody, ed.), Kluwer, 1997, 9--44. \url{https://doi.org/10.1007/978-94-015-8784-6_2}.
+\bibitem{BaakeZeiner} M. Baake and P. Zeiner, Geometric enumeration problems for lattices and embedded $\mathbb Z$-modules, in \emph{Aperiodic Order} (M. Baake and U. Grimm, eds.), Cambridge University Press, 2017, 73--172. \url{https://doi.org/10.1017/9781139033862.005}.
+\bibitem{BGT} N. H. Bingham, C. M. Goldie and J. L. Teugels, \emph{Regular Variation}, Cambridge University Press, 1987. \url{https://doi.org/10.1017/CBO9780511721434}.
+\bibitem{ChanOh} W. K. Chan and B.-K. Oh, Can we recover an integral quadratic form by representing all its subforms?, \emph{Adv. Math.} \textbf{433} (2023), 109317. \url{https://doi.org/10.1016/j.aim.2023.109317}.
+\bibitem{Chenevier} G. Chenevier, Statistics for Kneser $p$-neighbors, \emph{Bull. Soc. Math. France} \textbf{150} (2022), no.~3, 473--516. \url{https://doi.org/10.24033/bsmf.2852}.
+\bibitem{Davenport} H. Davenport, \emph{Multiplicative Number Theory}, 3rd ed., Springer, 2000.
+\bibitem{IK} H. Iwaniec and E. Kowalski, \emph{Analytic Number Theory}, AMS Colloquium Publications, vol.~53, American Mathematical Society, 2004. \url{https://doi.org/10.1090/coll/053}.
+\bibitem{KLL} D. Kim, S. H. Lee and S. Lee, Zeta functions enumerating subforms of quadratic forms, \emph{Math. Ann.} \textbf{393} (2025), 1459--1514. \url{https://doi.org/10.1007/s00208-025-03273-9}.
+\bibitem{KLLpre} D. Kim, S. H. Lee and S. Lee, Zeta functions enumerating subforms of quadratic forms, arXiv:2409.05625v1 (2024). \url{https://arxiv.org/abs/2409.05625v1}.
+\bibitem{Hyperbolic} D. Kim, S. H. Lee and S. Lee, Zeta functions of quadratic lattices of a hyperbolic plane, \emph{Math. Nachr.} \textbf{299} (2026), 290--311. \url{https://doi.org/10.1002/mana.70102}.
+\bibitem{Maynard} J. Maynard, Primes in arithmetic progressions to large moduli II: well-factorable estimates, \emph{Mem. Amer. Math. Soc.} \textbf{306} (2025), no.~1543. \url{https://doi.org/10.1090/memo/1543}.
+\bibitem{Pascadi} A. Pascadi, On the exponents of distribution of primes and smooth numbers, arXiv:2505.00653v2 (2025). \url{https://arxiv.org/abs/2505.00653}.
+\bibitem{Rossmann} T. Rossmann, Enumerating submodules invariant under an endomorphism, \emph{Math. Ann.} \textbf{368} (2017), 391--417. \url{https://doi.org/10.1007/s00208-016-1499-6}.
+\bibitem{Solomon} L. Solomon, Zeta functions and integral representation theory, \emph{Adv. Math.} \textbf{26} (1977), 306--326. \url{https://doi.org/10.1016/0001-8708(77)90044-5}.
+\bibitem{SP} R. Schulze-Pillot, \emph{Lecture Notes on Quadratic Forms and their Arithmetic}, especially \S9.2 (spinor genera and strong approximation), arXiv:2008.12847. \url{https://arxiv.org/abs/2008.12847}.
+\bibitem{StevenhagenLenstra} P. Stevenhagen and H. W. Lenstra, Jr., Chebotar\"ev and his density theorem, \emph{Math. Intelligencer} \textbf{18} (1996), no.~2, 26--37. \url{https://doi.org/10.1007/BF03027290}.
+\bibitem{Voight} J. Voight, \emph{Quaternion Algebras}, Springer, 2021. \url{https://doi.org/10.1007/978-3-030-56694-4}.
+\bibitem{Zeiner} P. Zeiner, Symmetries of coincidence site lattices of cubic lattices, \emph{Z. Kristallogr.} \textbf{220} (2005), 915--925. \url{https://doi.org/10.1524/zkri.2005.220.11_2005.915}.
+\bibitem{Zhang} Z. Zhang, Subform zeta functions of positive definite binary quadratic forms of arbitrary conductor, preprint, 2026. \url{https://doi.org/10.2139/ssrn.7390218}.
+\end{thebibliography}
+\end{document}

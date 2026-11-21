@@ -1,0 +1,147 @@
+\subsection{The finite expansions on the real axis}\label{sec:indorders}
+Keep the notation of Section~\ref{sec:spinboundary}, and set $\eta_j=2^{-j}$. For each nonempty subset $T$ occurring in a base spinor group $C$ define integers $\beta_T(W)$ by
+\[
+ |T\bmod D|=\sum_{D\subseteq W\subseteq C}\beta_T(W)
+ \qquad (D\subseteq C).
+\]
+Taking $D=C$ gives $\beta_T(C)=1$; the remaining coefficients follow by downward induction. For $j\ge1$ put
+\[
+ K_{H,j}=\sum_d d^{-1}\sum_{\text{base tuples at }d}
+       \sum_{\substack{W\subseteq C\\\operatorname{codim} W=j}}\beta_T(W)k_W.
+\]
+
+\begin{theorem}\label{th:indorders}
+For every indefinite parent of rank at least three, every $H=O,SO$ and each fixed integer $J\ge1$, all the indicated coefficient sums converge absolutely and
+\[
+ Z_H(1+x)=C_L x^{-3}
+       +\sum_{j=1}^J K_{H,j} x^{-2-\eta_j}
+       +O_{L,J}\bigl(x^{-2-\eta_{J+1}}\bigr)
+       \qquad(x\downarrow0).
+\]
+Here $K_{H,1}=K_H>0$ and $K_{H,2}\le0$. The latter is strictly negative exactly when some base tuple has a codimension-two quotient in which $T$ has two or three images.
+\end{theorem}
+\begin{proof}
+There is a constant $b_j$ depending only on $j$ such that $|\beta_T(W)|\le b_j$ for all $W$ of codimension $j$. Indeed $|T\bmod W|\le2^j$ and all terms in its recursion are indexed by subspaces of the fixed $j$-dimensional quotient. The number of codimension-$j$ subgroups of $C$ is at most $|C|^j$, by counting ordered tuples of dual characters. Subtract from $|T\bmod D|$ its expansion truncated at codimension $J$. The remainder vanishes if $\operatorname{codim}D\le J$. In the other case $D$ lies in at least one subgroup of codimension $J+1$ and the absolute value of the remainder is bounded by
+\[
+ O_J(|C|^J)\sum_{\operatorname{codim}W=J+1}\mathbf1_{D\subseteq W}.
+\]
+Since $J\ge1$, the bound also controls $|T\bmod D|$. Summing the indicator for fixed $W$ over labelled good-prime extensions gives $J_W(1+x)$.
+
+Write $Q=Q_d$ and $\eta=\eta_j$ for a fixed codimension $j$. Uniformly for nonprincipal Dirichlet characters $\chi$ modulo $Q$ and $1\le\sigma\le2$ one has
+\[
+ |L(\sigma,\chi)|\ll1+\log Q,\qquad
+ |L'(\sigma,\chi)|\ll(1+\log Q)^2.
+\]
+Indeed the partial sums of $\chi$ are bounded by $Q$ and its sum over a full period vanishes. Sum up to $Q$ trivially, then use partial summation on the tail with weights $u^{-\sigma}$ and $(\log u)u^{-\sigma}$. The differentiated tail is uniformly convergent down to $\sigma=1$ and is $O(1+\log Q)$. In particular the difference of the endpoint values at $1+x$ and $1$ is $O(x(1+\log Q)^2)$.
+
+Factor $J_W(s)=\zeta(s)^{2+\eta}A_W(s)\prod_{\chi\in W^\perp,\ \chi\ne1}L(s,\chi)^\eta$ as in Section~\ref{sec:spinboundary}. For $1\le\sigma\le2$, $A_W(\sigma)$ is bounded above uniformly, and
+\[
+ |A_W'(\sigma)|\ll 1+\log Q.
+\]
+In fact the logarithm and the logarithmic derivative of each eligible local correction are $O(p^{-2\sigma})$ and $O((\log p)p^{-2\sigma})$ respectively, by cancellation of its linear term. These constants can be taken uniform: the label weight is at most three and the sum of the character exponents is less than one. The finitely many smaller primes contribute bounded local factors. At excluded primes the residual factor is $(1-p^{-\sigma})^{2+\eta}\le1$, whose logarithmic derivative is $O((\log p)/(p-1))$. Sum over $p\mid Q$ for the claimed bound.
+
+All the character values $L(\sigma,\chi)$ in this expression are positive on the real interval in question. Using $|u^\eta-v^\eta|\le |u-v|^\eta$ for $u,v\ge0$ and telescoping the product of $2^j-1$ factors gives, for $0<x\le1$ and $j\ge1$,
+\begin{align*}
+ x^{2+\eta}J_W(1+x)&\ll_j (1+\log Q)^{1-\eta},\\
+ |x^{2+\eta}J_W(1+x)-k_W|&\ll_j x^\eta(1+\log Q)^2 .
+\end{align*}
+For the second estimate, each character factor contributes at most $O(x^\eta(1+\log Q)^{2\eta})$ and the others cost $O_j((1+\log Q)^{1-2\eta})$ in total. The changes from $A_W$ and from $x\zeta(1+x)=1+O(x)$ satisfy the displayed bound as well.
+
+For each extracted $j\ge1$, replacing $d^{-x}x^{2+\eta_j}J_W(1+x)$ by $k_W$ now costs
+\[
+ O_j\bigl(x^{\eta_j}(1+\log (2dQ))^2\bigr),
+\]
+using $|d^{-x}-1|\le x\log d$. For every fixed $a,b\ge0$ one has
+\[
+ \sum_d \frac{c(d)}d\,
+    \bigl(4\cdot2^{|S_d|}\bigr)^a(1+\log(2dQ_d))^b<\infty.
+\]
+Indeed for primes outside the fixed $S$ every nonzero exponent in $d$ is at least two, and the local type count is polynomial in that exponent. The constant multiplier $2^a$ per new prime leaves absolute convergence at every real $\sigma>1/2$ before the logarithmic weight. This also proves absolute convergence of the constants, since $|C|\le 4\cdot 2^{|S_d|}$. The total replacement error for each $j$ in the original series is therefore $O_{L,j}(x^{-2})$. The residual estimate, the first uniform product bound at $j=J+1$, and the same summability with $a=2J+1$ give $O_{L,J}(x^{-2-\eta_{J+1}})$. Finally the $W=C$ terms form the genus series, which equals $C_L x^{-3}+O_L(x^{-2})$ by its absolutely convergent correction to $\zeta(1+x)^3$.
+
+The hyperplane coefficient is the one in Theorem~\ref{th:indsecond}. For codimension two, consider the image of $T$ in $\mathbb F_2^2$. Images of sizes one, two, three and four have respectively zero, two, three and three nonconstant nontrivial characters. Subtract this number and the constant contribution one from the size of the image. The four possible values of $\beta_T(W)$ are $0,-1,-1,0$. All $k_W$ are positive.
+\end{proof}
+
+\begin{theorem}\label{th:indorders-terminate}
+For the chosen orientation put $C_{SO}(L)=C(L)$, $C_O(L)=C(L)/\langle\delta_L\rangle$, and $r_{H,L}=\dim_{\mathbb F_2} C_H(L)$. Thus $2^{r_{H,L}}$ is the number of $H$-classes in the parent's genus. One has $\beta_T(W)=0$ at every base tuple whenever $\operatorname{codim}W>r_{H,L}+1$. In particular
+\[
+ Z_H(1+x)=C_Lx^{-3}+\sum_{j=1}^{r_{H,L}+1}K_{H,j}x^{-2-\eta_j}
+              +O_L(x^{-2}).
+\]
+\end{theorem}
+\begin{proof}
+Let $G_0\subseteq C$ be the image of the spinor norms of $\prod_p SO(L_p)$. The occurring subset satisfies $T+G_0=T$ since postcomposing any local embedding $K_p\to L_p$ by an integral proper parent isometry gives another occurrence. For $H=SO$ take $G=G_0$. The idele formula shows that $C/G$ is a quotient of $C(L)$, since its defining kernel contains every proper local parent stabilizer norm and every rational principal idele.
+
+For $H=O$, choose local improper isometries $i_p$ of $L_p$ and $j_p$ of $K_p$, equal to a fixed rational reflection $r$ at almost all places. For a proper local transporter $g_p$ the tuple $(i_p g_p j_p)_p$ is also admissible, translating its spinor class by $\tau=[\theta((i_p j_p)_p)]$ in $C$. This follows from the multiplicativity of the spinor norm on the full orthogonal group. In squareclasses $\theta(i_pj_p)=\theta(ri_p)\theta(rj_p)$, and $(\theta(rj_p))_p$ is the child reversal, killed in the ordinary quotient. 
+
+Thus $G=G_0+\langle\tau\rangle$ preserves $T$ and $C/G$ is a quotient of the ordinary parent group $C_O(L)$: in addition to all proper parent stabilizer norms its defining kernel kills the idele $(\theta(ri_p))_p$ representing parent reversal. In both cases $P=G^\perp\subseteq\widehat C$ consequently has dimension at most $r_{H,L}$.
+
+For the codimension bound put $A=D^\perp$ and
+$R=A\cap P=(D+G)^\perp$: the second space consists of those
+characters of $A$ also trivial on the parent-stabilizer image $G$. The image of $T$ in $C/D$ is a union of full cosets of $(D+G)/D$, each of size $|A|/|R|$. The number of these cosets is the size of the image of $T$ in $C/(D+G)$ and depends only on $R$. Thus $|T\bmod D|=|A|h(R)$ for a rational-valued function $h$ on the subspaces of $P$. Explicitly $h(R)=|T\bmod R^\perp|/|R|$. Expand $h(R)=\sum_{Y\subseteq R} b(Y)$ by upward induction in this fixed finite lattice. Since $|A|$ counts the elements of $A$, we obtain the exact identity
+\[
+ |T\bmod D|=
+ \sum_{Y\subseteq P}\ \sum_{\chi\in\widehat C}
+ b(Y)\,\mathbf1_{Y+\langle\chi\rangle\subseteq D^\perp}.
+\]
+The indicator is $\mathbf1_{D\subseteq (Y+\langle\chi\rangle)^\perp}$, and the latter subgroup has codimension at most $r_{H,L}+1$. Uniqueness of the subgroup expansion proves the vanishing. The $O_L(x^{-2})$ estimate follows from the replacement estimates in Theorem~\ref{th:indorders}, now without any unextracted terms.
+\end{proof}
+
+\begin{theorem}\label{th:indorders-smooth}
+Set $\mathcal B_{H,L}=\{3\}\cup\{2+2^{-j}:1\le j\le r_{H,L}+1\}$. There are real functions $F_{H,a}\in C^\infty([0,1])$ for $a\in\mathcal B_{H,L}$ such that
+\[
+ Z_H(1+x)=\sum_{a\in\mathcal B_{H,L}} x^{-a} F_{H,a}(x),\qquad 0<x\le1.
+\]
+Their values at zero are $C_L$ for $a=3$ and $K_{H,j}$ for $a=2+\eta_j$. For each real $b$, the sum of the Taylor terms
+$F_{H,a}^{(k)}(0)x^{k-a}/k!$ with $k\ge0$ and $k-a\le b$ differs from $Z_H(1+x)$ by $o_{L,b}(x^b)$ as $x\downarrow0$. The derivative bounds in this real expansion use the ineffective constants in Siegel's theorem.
+\end{theorem}
+\begin{proof}
+The genus term gives $F_{H,3}(x)=(x\zeta(1+x))^3V(1+x)$. For $a=2+\eta_j$ use the real series
+\[
+ F_{H,a}(x)=\sum_d \frac1d\sum_{\text{base tuples at }d}
+  \sum_{\operatorname{codim}W=j}\beta_T(W)\,d^{-x}
+             x^{a}J_W(1+x).
+\]
+By Theorem~\ref{th:indorders-terminate} the identity holds for
+$0<x\le1$. We verify termwise differentiation at $x=0$.
+
+For a nonprincipal real character $\chi$ of modulus $Q=Q_d$ and each $\epsilon>0$,
+\begin{equation}\label{eq:indorders-siegel}
+ \inf_{0\le x\le1} L(1+x,\chi)\gg_\epsilon Q^{-\epsilon}.
+\end{equation}
+Siegel's theorem gives $L(1,\chi^*)\gg_\lambda q^{-\lambda}$ for the inducing primitive character of conductor $q\mid Q$ and any $\lambda>0$ \cite[Chap.~21]{Davenport}. The imprimitive factors are bounded below by $\prod_{p\mid Q}(1-1/p)\gg_\lambda Q^{-\lambda}$: at each sufficiently large $p$ use $1-1/p\ge p^{-\lambda}$. Thus $L(1,\chi)\ge c_\lambda Q^{-2\lambda}$. With the first-derivative bound in Theorem~\ref{th:indorders}, this gives $L(1+x,\chi)\ge c_\lambda Q^{-2\lambda}/2$ for $0\le x\le c'_\lambda Q^{-2\lambda}(1+\log Q)^{-2}$. For larger $x\le1$, the Euler product gives $L(1+x,\chi)\ge\zeta(2+2x)/\zeta(1+x)\gg x$, also when primes divide the modulus. Taking $\lambda$ sufficiently small in terms of $\epsilon$ gives \eqref{eq:indorders-siegel}.
+
+For $k\ge0$, period summation with weight $(\log u)^k u^{-\sigma}$ gives
+$|L^{(k)}(\sigma,\chi)|\ll_k(1+\log Q)^{k+1}$ uniformly on $1\le\sigma\le2$. Indeed the tail beyond $Q$ is bounded by its boundary value times $Q$ and $Q$ times the integral of the absolute derivative of that weight. The resulting tail is $O_k((1+\log Q)^k)$ for $\sigma\ge1$.
+The product and chain rules, together with
+\eqref{eq:indorders-siegel}, then bound all derivatives through
+order $k$ of $L(1+x,\chi)^{\eta_j}$ by
+$O_{k,j,\epsilon}(Q^\epsilon)$, taking smaller exponents in
+\eqref{eq:indorders-siegel} for the inverse powers.
+
+For $k\ge1$, the eligible-prime terms in the $k$-th derivative of $\log A_W(\sigma)$ are $O_{k,j}((\log p)^k p^{-2\sigma})$ by the same cancelled first-order term. For large primes this follows by termwise differentiation of the Taylor series in $p^{-\sigma}$, uniformly on $1\le\sigma\le2$; small primes contribute boundedly. 
+
+The excluded primes contribute in total $O_{k,j}((1+\log Q)^k)$ by differentiating $\log(1-p^{-\sigma})$ and summing over $p\mid Q$. Together with the upper bound for $A_W$, these estimates bound its ordinary derivatives by fixed powers of $1+\log Q$. The smooth factor $(x\zeta(1+x))^{2+\eta_j}$ and its derivatives are bounded on the real interval. Thus each derivative through order $k$ of $x^aJ_W(1+x)$ is $O_{k,j,\epsilon}(Q^\epsilon)$, uniformly up to $x=0$, by the normalized product formula. In taking products one may shrink $\epsilon$ in each factor, since the number of characters is fixed by $j$.
+
+Differentiating $d^{-x}$ costs powers of $\log d$. The powerful-index summability in Theorem~\ref{th:indorders} and $Q_d\ll_L d$ therefore give uniform absolute convergence of every differentiated series on $[0,1]$, using any sufficiently small final $\epsilon>0$. All the functions therefore extend smoothly to $x=0$ with the
+stated derivatives. Taylor's theorem, applied to the finite set
+of exponents $a$, gives the expansion.
+\end{proof}
+
+\begin{corollary}\label{cor:indorders-oneclass}
+For either orientation $K_{H,2}=0$ if and only if the indefinite parent has one $H$-class in its genus. Otherwise $K_{H,2}<0$. In the one-class case $K_{H,j}=0$ for every $j\ge2$, and
+\[
+ Z_H(1+x)=C_Lx^{-3}+K_Hx^{-5/2}+O_L(x^{-2}).
+\]
+The one-class case holds in both orientations if the parent contains an integral hyperbolic plane as an orthogonal direct summand.
+\end{corollary}
+\begin{proof}
+If $C_H(L)=0$, the vanishing and the estimate follow from Theorem~\ref{th:indorders-terminate}. Every $H$-class in every child genus is represented. Indeed if the local lattices of a child in this genus are $g_p K_p$ under proper local isometries, patch their overparents $g_p L_p$. The resulting global lattice is $H$-isometric to $L$ by hypothesis, giving the desired embedding, with the chosen equivalence. Thus $T=C$ and $|C/D|$ simply counts all characters trivial on $D$.
+
+Conversely, suppose $C_H(L)\ne0$. Use the prime $q$ and child $K$ of Theorem~\ref{th:indeuler}, leaving all other local lattices equal to $L_p$. The full stabilizer of $K_q$ has square spinor norms, contained in that of $L_q$. There is therefore a surjection $C(K)\to C(L)$. At $q$ reflection in the first basis vector of the chosen unimodular diagonalization preserves both parent and child. At other primes their lattices agree. Taking common improper local symmetries gives $\delta_K\mapsto\delta_L$, hence a surjection in either orientation. 
+
+The image of the whole occurring subset $T$ in $C_H(L)$ is zero. Indeed away from $q$ local transporters are parent stabilizers. At $q$ all units are parent spinor norms. The uniformizer idele at $q$ also dies in $C(L)$: divide by rational $q$, use $q\equiv1\bmod8$ and $q\equiv1\bmod p$ at the odd $p\in S$ to obtain local squares there, and absorb units at all remaining primes. Thus every idele supported at $q$ dies in the parent group. 
+
+By the distinguishing character in Theorem~\ref{th:indeuler}, $T$ has at least two distinct elements even for ordinary equivalence. A nonzero parent character pulls back to a nonzero character constant on $T$, whereas some other character takes both values on $T$. These characters are independent, and the image of $T$ in their rank-two quotient has exactly two elements. The strictness criterion in Theorem~\ref{th:indorders} gives $K_{H,2}<0$.
+
+For a hyperbolic plane with form $xy$, the product of reflections in $(1,1)$ and $(1,u)$ is an integral rotation of spinor norm $u$ for each local unit $u$, including at two. The calculation applies to any common scalar multiple of this plane. Thus all local unit squareclasses occur in the parent stabilizers. Dividing an idele by a rational number to make it a unit everywhere proves that the proper spinor group of the parent is trivial. Eichler's theorem gives the class-number assertion.
+\end{proof}

@@ -1,0 +1,21 @@
+\section{Prime-index sublattices in varying rank}
+Let \(a_p(n)\) be the intrinsic ordinary coefficient at index \(p\) of the standard lattice \(\mathbb Z^n\), and let \(b_p(n)\) be the number of signed-permutation orbits of the same sublattices. Set both sequences equal to zero at \(n=0\).
+\begin{proposition}
+For any odd prime \(p\) and all \(n\ge p^2\),
+\[
+ a_p(n)=b_p(n)-b_p(p^2)+a_p(p^2).
+\]
+Writing \(k=(p-1)/2\), one has
+\[
+ \sum_{n\ge0} b_p(n)z^n=\frac1{1-z}
+ \left(\frac1k\sum_{d\mid k}\frac{\varphi(d)}{(1-z^d)^{k/d}}-1\right).
+\]
+Thus \(a_p(n)\) is eventually a quasipolynomial of degree \(k\) and period dividing \(k\). The proper count equals the ordinary count when \(n>k\). For \(p=2,3\) both counts equal \(n\) in every positive rank, and for \(p=5,n\ge3\) they equal \(n+\lfloor n^2/4\rfloor\).
+\end{proposition}
+\begin{proof}
+Index-\(p\) kernels correspond to projective normal vectors. If \(w\) coordinates of a normal are nonzero, the norm-one vectors of its kernel span exactly the remaining \(n-w\) coordinate axes. Their orthogonal complement is the active kernel in \(\mathbb Z^w\), which has no norm-one vector. Hence \(w\) is intrinsic, and adjoining inactive axes preserves
+the distinction between active kernels. An isometry between two active kernels has matrix \(A/p\) with integral \(A\), since \(p\mathbb Z^w\) lies in the source. For a nonintegral isometry some row of \(A\bmod p\) is a nonzero multiple of its source normal. This row has \(w\) nonzero integer entries and squared norm \(p^2\), so \(w\le p^2\). Hence increasing the rank beyond \(p^2\) introduces no new identifications. For \(n>k\) there is an inactive axis or a pair of coordinates equivalent up to sign. A sign change of the former or a signed transposition of the latter is an improper automorphism fixing the kernel. The same conclusion is immediate at \(p=2\).
+
+Modulo signed permutations, a nonzero normal is specified by multiplicities of the \(k\) pairs of nonzero residues up to sign. Projective rescaling rotates these types by the cyclic group of order \(k\). Its elements of order \(d\) have \(k/d\) cycles of length \(d\), giving the displayed series after removing the zero tuple and adding inactive axes. The identity has pole order \(k+1\) at one and all other summands have lower pole order. All poles are \(k\)-th roots of unity. For \(p=2,3\) one active type remains and the norm-one count already distinguishes all possibilities. At \(p=5\), write \(z,u,v\) for the counts of zero coefficients and the two nonzero types. There are \(2z\) vectors of norm one and \(4\binom z2+2(\binom u2+\binom v2)\) of norm two. These recover the unordered pair \(\{u,v\}\) and hence the orbit. Summing \(\lfloor w/2\rfloor+1\) over \(1\le w\le n\) gives the last formula.
+\end{proof}
+

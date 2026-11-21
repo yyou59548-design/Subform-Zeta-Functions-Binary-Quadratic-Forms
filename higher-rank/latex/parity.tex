@@ -1,0 +1,21 @@
+\section{A uniform parity criterion in every signature}\label{sec:allparity}
+\begin{theorem}\label{th:allparity}
+Let $L$ be a nondegenerate integral quadratic lattice of rank $n\ge1$. Its ordinary and proper coefficient sequences coincide at every index if and only if $n$ is odd. If $n$ is even, there exist an index \(b\) and a finite set of primes \(S'\) depending on $L$ such that
+\[
+ a_{SO}(bt)>a_O(bt)\qquad\bigl((t,\prod_{p\in S'}p)=1\bigr).
+\]
+For a definite parent of even rank \(n\ge4\) the difference on this set is \(\gg_L t^{n-1}\); for \(n=2\) it is \(\gg_L\varphi(t)\).
+\end{theorem}
+\begin{proof}
+Odd rank follows by multiplication by \(-I\). For even rank, choose \(q\equiv1\bmod 8\) and \(q\equiv1\bmod p\) at all odd primes dividing the determinant of an integral polarization. The local unimodular Gram has square determinant at \(q\), hence in even rank is isometric to \(uI_n\) for a nonsquare unit \(u\). Take \(K_q\) with scales \(1,q,\ldots,q^{n-1}\) in this basis and keep the parent at other primes. Any improper intrinsic isometry would have nonsquare unit spinor norm at \(q\), even spinor valuation at good primes other than \(q\), and arbitrary norms only at primes where \(\Xi\) is trivial. Applying the explicitly defined character \(\Xi\) of Theorem~\ref{th:indeuler} would then give \(-1\) on a rational spinor norm. Its triviality on rational numbers rules this out. The same spinor-norm obstruction applies in rank two.
+
+Fix any rational reflection \(r\) and scale \(K\) by a single positive integer so that both \(K\) and \(rK\) lie in \(L\). They have the same index \(b\). No proper isometry can take \(K\) to \(rK\), since composing with \(r^{-1}\) would give an improper automorphism of \(K\). Let \(S'\) contain all primes of \(2b\det B_L\). For every \(t\) allowed in the statement, insert at each \(p^e\Vert t\) any nonisotropic primitive kernel in \(K_p=L_p\) and take \(M\) to be the global child. Such kernels exist in every rank at least two by the formula for \(P_n(p)\). Both \(M\) and \(rM\) are contained in \(L\). Restoring their regular parts at all primes dividing \(t\) recovers respectively \(K\) and \(rK\); the uniqueness in Lemma~\ref{lem:local} is purely local and holds in any signature. Every proper identification of these two children would extend to a proper identification of those two different orientations of \(K\). Thus their ordinary class contributes one to the difference.
+
+In definite signature, distinct \(\Gamma_O(K)\)-orbits of such kernels give distinct ordinary classes by the same restoration argument. Their number is at least
+\[
+ |\Gamma_O(K)|^{-1}t^{n-1}\prod_{p\mid t}
+   \left(1-\Bigl(\frac{(-1)^{n/2}\det B_L}{p}\Bigr)p^{-n/2}\right).
+\]
+For \(n\ge4\) the product is bounded below by a positive constant, and for \(n=2\) it is bounded below by \(\varphi(t)/t\). Negative definite forms may be multiplied by minus one. These bounds give the stated growth estimates.
+\end{proof}
+

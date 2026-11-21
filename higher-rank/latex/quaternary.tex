@@ -1,0 +1,155 @@
+\section{Orientation in even rank}\label{sec:quaternary}
+In this section write $a_L(m)$ and $a_L^+(m)$ for the ordinary
+and proper coefficients, respectively. A chiral ordinary class has
+two proper orientations in the rational space; the parent may
+represent just one.
+
+\subsection{Fixed sublattices of a sign change}
+Put $b_t(m)=\#\{M\subseteq\mathbb Z^t:[\mathbb Z^t:M]=m\}$, with $b_0(1)=1$ and $b_0(m)=0$ for $m>1$. Write $*$ for Dirichlet convolution.
+
+\begin{lemma}\label{lem:split-sign-glue}
+Let $F_{r,t}(m)$ count the index-$m$ lattices fixed by $(x,y)\mapsto(x,-y)$ on $\mathbb Z^r\oplus\mathbb Z^t$. Then
+\[
+ F_{r,t}(m)=
+ \sum_{\substack{0\le j\le \min(r,t)\\2^j\mid m}}
+ \genfrac{[}{]}{0pt}{}{r}{j}_{2}\genfrac{[}{]}{0pt}{}{t}{j}_{2}\,
+ |\operatorname{GL}_j(\mathbb F_2)|\,(b_r*b_t)(m/2^j),
+\]
+where the Gaussian binomial counts codimension-$j$ subspaces over $\mathbb F_2$ and the group of rank zero has order one.
+\end{lemma}
+\begin{proof}
+For a full lattice $M$ let $R_+,R_-$ be its projections and $K_+,K_-$ its intersections with the two summands. Lifting $x\in R_+$ to $(x,y)\in M$ defines an isomorphism $R_+/K_+\longrightarrow R_-/K_-$ by $x\mapsto y$. Its graph recovers $M$ and each graph gives one such lattice. The sign change preserves this graph precisely when negation acts trivially on the common quotient. This makes the quotient an $\mathbb F_2$-space, of some dimension $j$. For fixed projections the choices of kernels correspond bijectively to codimension-$j$ subspaces of $R_\pm/2R_\pm$, followed by a choice of isomorphism. The graph has index $2^j$ in $R_+\oplus R_-$. Summing over projection indices gives the result.
+\end{proof}
+The Dirichlet series of $F_{r,t}$ thus factors as the product
+of those of $b_r$ and $b_t$, multiplied by the displayed polynomial
+in $2^{-s}$ describing dyadic gluing.
+
+\subsection{A quaternary local extension criterion}
+\begin{lemma}\label{lem:quat-integral-norm}
+Let $D>1$ be squarefree and let $q_1,q_2$ be positive definite integral binary forms. On $L=\mathbb Z^2\oplus\mathbb Z^2$ take $Q(x,y)=q_1(x)+Dq_2(y)$. Let $P$ consist of primes $p\mid D$ where both binary forms are anisotropic modulo $p$. At every index $m$ supported on $P$, every rational isometry carrying one index-$m$ sublattice of $L$ onto another preserves $L$.
+\end{lemma}
+\begin{proof}
+For nonzero $x\in\mathbb Q_p^2$, write $k=\min_i v_p(x_i)$. Anisotropy gives $v_p(q_i(x))=2k$. Nonzero terms in $q_1(x)+Dq_2(y)$ have valuations of different parity. Their sum is integral exactly when both $x,y$ lie in $\mathbb Z_p^2$, also when one input vanishes. Thus $L_p$ is exactly the set of vectors of integral norm, including at $p=2$ when the hypothesis holds. All rational isometries preserve $L_p$ at these primes. At primes outside the support of $m$, both sublattices localize to $L_p$. Equality at every finite prime gives equality of the integral lattices.
+\end{proof}
+
+\begin{theorem}\label{thm:quat-sign-family}
+Fix a nonempty finite set $P$ of odd primes and put $D=\prod_{p\in P}p$. Choose $b>0$ prime to $D$ such that $1,b,D,Db$ are distinct and $-b$ is a nonsquare at every $p\in P$. Such $b$ exist by the Chinese remainder theorem. Let $L$ have diagonal form $\langle1,b,D,Db\rangle$. At every index $m$ supported on $P$,
+\[
+ a_L(m)=\tfrac18(b_4+4F_{1,3}+3F_{2,2})(m),\qquad
+ a_L^+(m)=\tfrac14(b_4+3F_{2,2})(m).
+\]
+At $p\in P$ one has $a_L^+(p)-a_L(p)=((p-1)/2)^3$. At every $p^e$, $e\ge1$, the difference is at least $(\varphi(p^e)/2)^3$ and
+\[
+ a_L(p^e)\sim b_4(p^e)/8,\qquad a_L^+(p^e)\sim b_4(p^e)/4\qquad (e\to\infty).
+\]
+For distinct $p,q\in P$ both coefficients satisfy $a(pq)>a(p)a(q)$.
+\end{theorem}
+\begin{proof}
+In a diagonal lattice with distinct positive weights, the shortest nonzero vectors are the two signed vectors on the lightest axis. Restriction to the perpendicular complement and induction give the entire integral isometry group, the independent sign changes. Lemma~\ref{lem:quat-integral-norm} applies with $q_i=x^2+by^2$, so the required coefficients are exactly the orbit counts under this sign group and its determinant-one subgroup. The full group contains two central signs, eight changes negating one or three coordinates, and six changes negating two. Burnside's formula and Lemma~\ref{lem:split-sign-glue} give the displayed coefficients.
+
+Kernels of surjections $L\to\mathbb Z/p^e$ are parametrized by primitive rows modulo unit scaling. Rows whose four entries are units give $\varphi(p^e)^3$ distinct kernels. A sign fixing such a row projectively has all signs equal. Its stabilizer lies in the proper group and the ordinary orbit, of size eight, splits in two. At $e=1$ every other row has a zero coordinate whose sign change provides an improper stabilizer, proving exactness there. The Euler factor for $b_j$ at $p$ is $\prod_{i=0}^{j-1}(1-p^i X)^{-1}$ by column Hermite normal form. Partial fractions give $b_4(p^e)\sim p^{3e}\prod_{i=1}^3(1-p^{-i})^{-1}$. At odd $p$, the same product formula gives $F_{1,3}(p^e)=O_p(p^{2e})$ and $F_{2,2}(p^e)=O_p((e+1)p^e)$.
+
+For any fixed sign $g$, the count $f_g$ of its fixed lattices is multiplicative, by the prime-wise decomposition of a finite-index sublattice. At a prime $p\in P$, the three sign types above have counts $p^3+p^2+p+1$, $p^2+p+2$, and $2p+2$, in strictly decreasing order. This ordering holds for $q$ as well. Each of the two groups has at least two of these types. The difference between the average of $f_g(p)f_g(q)$ and the product of the averages is
+\[
+ \frac{1}{2|G|^2}\sum_{g,h\in G}
+ (f_g(p)-f_h(p))(f_g(q)-f_h(q))>0.
+\]
+\end{proof}
+
+\begin{theorem}\label{thm:quat-missing-mate}
+Put $B(x,y)=3x^2+xy+5y^2$. Let $D>1$ be squarefree with every prime divisor either $2$ or an odd prime at which $-59$ is a nonsquare. For $L=(\mathbb Z^4,B\perp D B)$ and every $m$ supported on the prime divisors of $D$,
+\[
+ a_L(m)=a_L^+(m)=\tfrac12\bigl(b_4(m)+F_{2,2}(m)\bigr).
+\]
+Every ordinary class counted here admits no improper automorphism, and exactly one of its two proper classes is represented inside $L$.
+\end{theorem}
+\begin{proof}
+Completing the square gives $B=3(x+y/6)^2+59y^2/12$. Its shortest vectors are $\pm e_1$. Any integral isometry has columns $(\epsilon,0),(k,\delta)$ where $\epsilon,\delta=\pm1$. Comparing the cross coefficient gives $6k=\epsilon-\delta$, hence $k=0,\delta=\epsilon$. In $L$, vectors of norm at most five span the first rational plane. The other plane has minimum $3D>5$. Thus every symmetry preserves both planes, and its two restrictions are independent scalar signs. In particular every symmetry is proper. The odd-prime hypotheses ensure anisotropy of $B$ by its discriminant, and modulo two one has $B=x^2+xy+y^2$, also anisotropic. Lemma~\ref{lem:quat-integral-norm} makes the integral symmetry group control all the relevant equivalences, including all automorphisms of each sublattice. The central pair fixes every lattice; the two remaining elements each have two positive and two negative axes. Burnside averaging gives the displayed formulas. An improper rational reflection exists in the ambient space. If its image of a proper class were represented in $L$, composition with the proper equivalence would give an improper isometry between two of our sublattices, contradicting the extension lemma.
+\end{proof}
+For $D=2$ the coefficients are $(a_L(2),a_L(4))=(15,119)$; for $\langle1,4,3,12\rangle$ they satisfy $(a_L(3),a_L^+(3))=(15,16)$.
+
+\subsection{A fixed diagonal lattice in every even rank}
+Let $L$ now have distinct positive diagonal weights $w_1,\ldots,w_n$ with $n$ even. Let $p$ be an odd prime not dividing $\prod_i w_i$ and $e\ge1$. A cyclic index-$p^e$ sublattice is the kernel of a primitive covector modulo $p^e$ up to unit scaling. Call this kernel nonsingular if the dual quadratic norm of the covector is nonzero modulo $p$.
+
+\begin{lemma}\label{lem:quat-cyclic-recovery}
+For any lattice unimodular at an odd prime $p$, a rational isometry between an index-$p^e$ nonsingular cyclic sublattice and any index-$p^e$ sublattice of the same parent preserves that parent.
+\end{lemma}
+\begin{proof}
+Use the symmetric pairing at $p$ to lift the covector to a vector $v\in L_p$ of unit norm. Then $L_p=H\perp\mathbb Z_p v$ with $H$ unimodular, and the kernel is $M_p=H\perp p^e\mathbb Z_p v$. Hence $M_p^\#/M_p$ is cyclic of order $p^{2e}$. The parent is an integral overlattice, so its quotient by $M_p$ is the unique subgroup of order $p^e$ in this cyclic group. The same intrinsic recovery holds on the target side since its discriminant module is isomorphic and its given parent is integral. At other primes both lattices localize to the parent. Thus rational isometry preserves the nonsingular stratum.
+\end{proof}
+
+For $S\subseteq\{1,\ldots,n\}$, set $A_\varnothing=0$. For nonempty $S$ of size $h$ put
+\[
+ A_S=p^{(e-1)(h-1)}
+ \left[p^{h-1}-
+ \begin{cases}
+ \displaystyle\left(\frac{(-1)^{h/2}\prod_{i\in S} w_i}{p}\right)p^{h/2-1},& h\ \mathrm{even},\\
+ 0,&h\ \mathrm{odd}.
+ \end{cases}\right].
+\]
+\begin{theorem}\label{thm:even-good-gap}
+The contribution of the nonsingular cyclic stratum to $a_L^+(p^e)-a_L(p^e)$ is exactly
+\[
+ 2^{1-n}\sum_{S\subseteq\{1,\ldots,n\}}(-1)^{n-|S|} A_S.
+\]
+It is a lower bound for the whole difference and is strictly positive for $p\ge5$. For fixed $L$, as $p\to\infty$ through primes,
+\[
+ a_L(p)=2^{1-n}p^{n-1}+O_n(p^{n-2}),\qquad
+ a_L^+(p)=2^{2-n}p^{n-1}+O_n(p^{n-2}).
+\]
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:quat-cyclic-recovery} the ordinary and proper actions on this stratum are precisely those of the sign group and its even subgroup. A primitive row has at least one unit coordinate, which forces its projective stabilizer scalar to be $\pm1$. At each nonzero coordinate modulo $p^e$ its sign must equal this scalar since $2$ is a unit. Thus an ordinary orbit splits if and only if every coordinate is nonzero modulo $p^e$. In that case its size is $2^{n-1}$.
+
+The quantity $A_S$ counts nonsingular projective covectors whose
+coordinates vanish outside $S$. Their $h$-variable dual quadratic form
+has determinant squareclass $(\prod_{i\in S}w_i)^{-1}$, whose
+quadratic character is the same as that of $\prod_{i\in S}w_i$.
+The nonisotropic-line formula in Section~\ref{sec:core}, applied in
+dimension $h$, therefore gives the bracketed factor in $A_S$.
+Each such line has $p^{(e-1)(h-1)}$ projective lifts, obtained by
+normalizing one unit coordinate. Thus the displayed expression for
+$A_S$ incorporates all lifts to modulus $p^e$. Inclusion--exclusion now imposes nonzero entries modulo $p^e$ at every coordinate. The forgetful map shows that all remaining ordinary classes
+contribute nonnegatively to the difference. If $p\ge5$, set all but one coordinate to one and vary the last among units modulo $p$. Its square takes at least two different values, so at least one choice has nonzero norm. Every lift with all coordinates units still qualifies. Finally at index $p$ the excluded coordinate hyperplanes and the isotropic quadric contain $O_n(p^{n-2})$ projective points by the same count. The remaining $p^{n-1}+O_n(p^{n-2})$ points all have scalar stabilizer and lie in saturated orbits, proving both asymptotics.
+\end{proof}
+
+For each even rank $2k$, take $\mathop{\perp}\limits_{j=0}^{k-1}2^j B$,
+where $B$ is the preceding binary form. In the complement of the first $j$ planes the vectors of norm at most $5\cdot 2^j$ span the next plane. Induction proves that its full symmetry group consists of scalar signs on the binary blocks and hence is proper. At every odd prime of unimodularity, Lemma~\ref{lem:quat-cyclic-recovery} consequently gives one-sided orientation and no improper automorphisms on the entire nonsingular cyclic stratum, at all exponents. This stratum is nonempty, since a nondegenerate quadratic form in odd characteristic cannot vanish identically.
+
+\subsection{Orientation across several primes}
+For the same diagonal $L$, let $m$ be any positive integer prime to $2\prod_i w_i$. Consider the saturated stratum of lattices whose component at each $p^e\Vert m$ is cyclic and nonsingular. For a nonempty set $S$ put
+\[
+ N_{p,e}(S)=\sum_{T\subseteq S}(-1)^{|S|-|T|}A_T(p,e).
+\]
+Here $A_T(p,e)$ is the preceding finite-field expression. Given a family $\mathcal S=(S_p)_{p\mid m}$, make a graph on $\{1,\dots,n\}$ by joining any two distinct vertices occurring in a common $S_p$. Include isolated vertices and write $c(\mathcal S)$ for the number of connected components. Define $E(\mathcal S)=1$ if every component has even size, and $E(\mathcal S)=0$ otherwise.
+
+\begin{theorem}\label{thm:even-orientation-crt}
+Let $a_{\rm ns}$ and $a_{\rm ns}^+$ count ordinary and proper classes in this stratum. Then
+\begin{align*}
+ a_{\rm ns}(m)
+ &=\sum_{\mathcal S}2^{c(\mathcal S)-n}
+            \prod_{p^e\Vert m}N_{p,e}(S_p),\\
+ a_{\rm ns}^+(m)-a_{\rm ns}(m)
+ &=\sum_{\mathcal S} E(\mathcal S)\,2^{c(\mathcal S)-n}
+            \prod_{p^e\Vert m}N_{p,e}(S_p).
+\end{align*}
+The sums run over all assignments of nonempty $S_p$. In rank four there are pairs of local kernels, each admitting an improper stabilizer, whose combined global kernel has two represented orientations and no improper stabilizer.
+\end{theorem}
+\begin{proof}
+The Chinese remainder theorem identifies these lattices with independent choices of primitive projective rows at the primes dividing $m$. Primary decomposition recovers each local congruence kernel from
+their intersection. Recovery of the unimodular parent in Lemma~\ref{lem:quat-cyclic-recovery} holds at each of these primes, and outside their support the parent is unchanged. Therefore distinct global tuples are equivalent exactly under an element of the global sign group, with the determinant condition for proper equivalence.
+
+The number of tuples with local coordinate supports exactly $\mathcal S$ is the displayed product of $N_{p,e}(S_p)$ by inclusion--exclusion. At a given prime the scalar of a stabilizing sign, found from a unit entry, forces equal signs at all nonzero coordinates modulo $p^e$. This holds simultaneously at every prime precisely when the sign is constant on each component of the graph. The stabilizer has cardinality $2^{c(\mathcal S)}$, and contains an improper element precisely when one component has odd size. The first formula weights each tuple by the inverse size of its orbit. Exactly the indicated orbits split under the determinant-one subgroup, giving the second formula. For the last assertion take different primes $p,q\ge 5$ of unimodularity and supports $S_p=\{1,2,3\}$, $S_q=\{3,4\}$. Nonsingular rows with these exact supports exist since one can vary one nonzero square while fixing the other entries. Each support misses a coordinate, while the two together connect all four vertices.
+\end{proof}
+
+\begin{corollary}\label{cor:even-separated-window}
+For any integer $M\ge1$ choose positive weights $w_{j+1}>M^2w_j$. With $L=\langle w_1,\ldots,w_n\rangle$, every index $m\le M$ satisfies
+\[
+ a_L(m)=2^{-n}\sum_{h=0}^n\binom nh F_{n-h,h}(m),\qquad
+ a_L^+(m)=2^{1-n}\sum_{\substack{0\le h\le n\\2\mid h}}\binom nh F_{n-h,h}(m).
+\]
+\end{corollary}
+\begin{proof}
+If $T$ carries one index-$m$ sublattice to another, then $mTe_j\in L$ and has norm $m^2w_j<w_{j+1}$ for $j<n$. Its last $n-j$ entries therefore vanish. Thus $T$ stabilizes the coordinate flag, and orthogonality forces $T$ to be diagonal with entries $\pm1$. All these signs preserve the parent. Apply Burnside's formula and Lemma~\ref{lem:split-sign-glue}.
+\end{proof}
+

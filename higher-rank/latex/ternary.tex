@@ -1,0 +1,715 @@
+\section{All indices for the cubic ternary lattice}\label{sec:cubic}
+Take $L=\mathbb Z^3$ with the standard dot product. Write
+$a(m)$ for the number of intrinsic classes at index $m$ and
+$r_3(b)=\#\{(x,y,z)\in\mathbb Z^3:x^2+y^2+z^2=b\}$.
+Ordinary and proper classes coincide in rank three. The coefficients
+are expressed in terms of $r_3$, quadratic residue symbols and rational
+functions of one variable.
+For an odd prime $p$ write $\chi_p(b)=(b/p)$. In the following formulas
+$T$ is formal; products over $p^k\parallel m$ use only $k>0$.
+
+\paragraph{Local factors at odd primes.}
+Put
+\[
+ F_1=\frac1{(1-T)(1-pT)(1-p^2T)},\quad
+ F_2=\frac1{(1-T)^2(1-pT)}.
+\]
+Also define
+\[
+ J_p(b)=\frac1{1-T}
+ \begin{cases}(1-T)^{-2}&\chi_p(b)=1,\\
+ (1-T^2)^{-1}&\chi_p(b)=-1.\end{cases}
+\]
+The identity row is $F_1(1-(p+1)T/2)$. The half-turn row has an
+axis parameter $b$ and a squarefree odd reversal index $e$. At $p\mid e$
+it is $TF_2/2$. At $p\nmid e$ it is
+$F_2(1-(1+\chi_p(-b))T/2)$. Here $b=e$ or $2e$.
+The quarter-turn row is $J_p(-1)(1-(1+\chi_p(-1))T/2)$.
+The third-turn and sixth-turn rows at $p\ne3$ are both
+$J_p(-3)(1-(1+\chi_p(-3))T/2)$. At $p=3$ they are, respectively,
+\[
+ 1+\frac{T(1+2T)}{2(1-T)^2},\qquad \frac{T}{2(1-T)^2}.
+\]
+The sixth-turn row is used only when $3\mid m$.
+
+\paragraph{Local factors at two.}
+For the identity retain $F_1$ with $p=2$ and set
+$P=(1+3T)/((1-T)^2(1-2T))$. The other rows are
+\[
+\begin{array}{c|c}
+ \text{rotation}&\text{factor at }2\\ \hline
+ \text{half-turn, }b\text{ odd}&P\\
+ \text{half-turn, }b\text{ even}&(1-2T)^{-1}+TP\\
+ \text{quarter-turn}&(1+T)/(1-T)^2\\
+ \text{third- or sixth-turn}&((1-T)(1-T^2))^{-1}.
+\end{array}
+\]
+For each row $j$ write $W_j(m)=\prod_{p^k\parallel m}[T^k]A_{j,p}(T)$.
+Use $W_2(b,e;m)$ for the half-turn row.
+\begin{theorem}\label{thm:cubic-all}
+For every $m\ge1$,
+\[
+\begin{split}
+24a(m)={}&W_1(m)+6W_4(m)+8W_3(m)
+  +8\mathbf1_{3\mid m}W_6(m)\\
+ &+\sum_{\substack{e\mid m\\e\ {\rm odd\ squarefree}}}
+  \left(\frac{r_3(e)}2W_2(e,e;m)
+       +\frac{r_3(2e)}2W_2(2e,e;m)\right).
+\end{split}
+\]
+Here the subscripts $1,4,3,6$ denote rotation orders.
+\end{theorem}
+In particular $a(2)=a(3)=3$, $a(6)=13$. The cubic Dirichlet series
+does not have multiplicative coefficients. For $p\ge5$ the rows give
+\[
+ a(p)=\frac{2p^2+19p+70+3\chi_p(-1)-6\chi_p(-2)+8\chi_p(-3)}{48}
+       +\frac{r_3(p)+r_3(2p)}{96}.
+\]
+At any fixed prime $p$, the formula gives a rational series in $T$
+for the coefficients $a(p^k)$: only $e=1,p$ occur, and at $p=2$
+only $e=1$.
+
+\subsection*{Maximal parents and their local trees}
+An integral unimodular positive rank-three lattice is isometric to $L$.
+The open ball of radius $\sqrt2$ has volume greater than $2^3$,
+so Minkowski's theorem gives a norm-one vector. Its orthogonal complement
+is integral unimodular; the open disk of radius $\sqrt2$ has area greater
+than $2^2$, giving another norm-one vector. Thus every integral self-dual
+lattice in the rational cubic space is a possible parent. The positive
+integral stabilizer $\Gamma=\mathrm{SO}(L)$ consists of the 24 determinant-one
+signed permutations.
+
+Over $\mathbb Q_2$ the norm-integral vectors are exactly
+$L_2=\mathbb Z_2^3$: an integral triple with an odd coordinate has sum
+of squares nonzero modulo four. Consequently the self-dual parent at two
+is unique. For $p$ odd let the vertices be the self-dual lattices in
+the given local space; join vertices whenever their intersection has
+index $p$ in both. For any two vertices $P,R$ the elementary divisor
+exponents relative to one another are $(-h,0,h)$ since duality negates
+these exponents. An index-$p$ hyperplane $K\subset P$ corresponds to
+a line $\ell=(K/pP)^\perp$ in the nonsingular space $P/pP$. If
+$\ell$ is anisotropic the discriminant group $K^*/K$ is cyclic of
+order $p^2$: split off a unit vector lifting $\ell$, then $K$ replaces
+this summand by its $p$-multiple. There is just one index-$p$ overgroup.
+If $\ell$ is isotropic, choose a lift $v\in P$ with $v^2\in p^2\mathbb Z_p$
+by adjusting $v$ by $p$ times a vector pairing to a unit with it.
+Then $K+\mathbb Z_p(v/p)$ is a second self-dual parent. The two
+distinct order-$p$ subgroups of $K^*/K$ defining these parents show
+that the group is elementary; its pairing, multiplied by $p$, is a
+nondegenerate hyperbolic plane. Its two isotropic lines are all the
+possibilities. The neighbors therefore correspond to the isotropic lines. There are $p+1$ lines, since a nondegenerate ternary
+form over a finite field of odd order has an isotropic point and the
+conic through that point is parametrized by the projective line.
+After diagonalization and fixing the third coordinate, isotropy follows
+by intersecting two subsets of $\mathbb F_p$, each containing $(p+1)/2$
+quadratic values.
+
+Choose a Smith basis of $P$ in which $R$ has generators
+$p^h u,v,p^{-h}w$ with $h>0$. The lattice with generators
+$pu,v,p^{-1}w$ is integral by the pairings in $P$ and $R$ and has
+unit determinant. Continuing with each exponent between 0 and $h$
+gives a path of length $h$; its members all contain $P\cap R$.
+The exponent $h$ is the least integer such that $p^hR\subset P$,
+so it changes by at most one along edges. The line $p^hR\bmod pP$
+is spanned by $w$ and is isotropic. Any other isotropic line has
+nonzero pairing with $w$, since a nonsingular ternary space contains
+no totally isotropic plane. The corresponding neighbor omits $p^hR$,
+so its distance exponent to $R$ is $h+1$. Every vertex has a unique edge toward the root, with no edges
+within a level; hence the neighbor graph is a tree. For a fixed full lattice $M_p$, the set of parents containing $M_p$
+is a finite convex subtree when nonempty. Every vertex on the path
+between two such parents contains their intersection, and every parent
+lies between $M_p$ and $M_p^*$.
+
+For a represented lattice $M$ of determinant $m^2$ the product of these
+subtrees is the complex of its possible parents. Each vertex gives an
+actual global parent by intersecting its local lattices with the rational
+space. This local-to-global correspondence follows by placing
+all lattices between $cL$ and $c^{-1}L$ and decomposing their finite
+quotient into its primary groups. The dyadic factor and every $p\nmid m$
+contribute one vertex. The index of $M$ in every parent is $m$.
+
+\subsection*{The signed count of marked cubes}
+The product of parent trees is contractible. For $g\in\mathrm{SO}(M)$
+the alternating sum of its traces on the rational cellular chains is 1:
+cancel the traces on boundaries in successive dimensions to leave
+only $H_0$. On a preserved $r$-cube the contribution is
+$(-1)^r(-1)^{b_g}$ where $b_g$ is the number of reversed local edges.
+Prime places cannot be permuted. Averaging over $\mathrm{SO}(M)$
+and summing over represented classes, we may group terms by unanchored
+cubes. For such a cube $C$, let $K_C$ be the intersection of its
+vertices and $S_C$ its rational proper stabilizer. It is finite, since the stabilizer of any one
+of its finitely many vertices is finite. If edges occur at the primes
+of $d$, its intersection has index $d$ in every vertex. The lattices
+with $C$ among their parents are exactly the index-$m/d$ sublattices
+of $K_C$. Changing the order of the finite incidence sum, the contribution
+of the orbit of $C$ is
+\[
+ \frac{(-1)^{\omega(d)}}{|S_C|}
+ \sum_{g\in S_C}(-1)^{b_g}\,
+ \#\{M\subset K_C:[K_C:M]=m/d,\ gM=M\}.
+\]
+In both orbit decompositions, a marked pair has stabilizer
+$S_C\cap\mathrm{SO}(M)$, on which the character $(-1)^{b_g}$ is
+evaluated. We may mark one vertex of each cube as $L$.
+Summing over all cubes anchored there replaces the preceding denominator
+by $2^{\omega(d)}|\Gamma|$. To see this, the sum over $S_C$-orbits
+of vertices of $1/|(S_C)_P|$ equals $2^{\omega(d)}/|S_C|$;
+after identifying $P$ with $L$ its remaining changes of coordinates
+are precisely $\Gamma$, independently of whether the cube admits an
+edge-reversing symmetry.
+
+For an anchored cube $gL$ is a corner and $g^2L=L$ because $g$ preserves
+or reverses each local edge. Write $e$ for the product of primes where
+$gL_p\ne L_p$. At these primes an edge is forced, $K_{C,p}=L_p\cap gL_p$,
+and the signs from dimension and orientation cancel. At an odd prime
+outside $e$, either there is no edge or one chooses a $g$-fixed isotropic
+line at $L_p$. Thus, writing $F_{g,P}(T)$ for the series of $g$-stable
+sublattices of $P$ by index exponent, the contribution of $g$ factors
+into local coefficients. At a reversed prime the factor is
+$TF_{g,L_p\cap gL_p}/2$. At another odd prime it is
+\[
+ F_{g,L_p}-\frac T2\sum_{\substack{\ell\ \text{isotropic}\\g\ell=\ell}} F_{g,K_\ell}.
+\]
+At two it is $F_{g,L_2}$. Conversely any rational rotation with square
+fixing $L$, with squarefree odd displacement $e\mid m$, and with the
+indicated choices at the remaining primes stabilizes exactly that cube.
+The product for invariant sublattices follows by primary decomposition
+of $K_C/(m/d)K_C$.
+
+\subsection*{Classification of rational rotations}
+Write a rational rotation as conjugation on the trace-zero Hamilton
+quaternions by a primitive integral quaternion $q=(w,x,y,z)$, unique
+up to sign. To see surjectivity, an integral or rational orthogonal
+rotation of trace $-1$ is a half-turn about a rational axis, represented
+by its pure axis vector. Otherwise its Cayley transform
+$(g-I)(g+I)^{-1}$ is rational skew-symmetric and is the cross-product
+matrix of a rational vector $v$. The quaternion $(1,v)$ gives back
+$g$ by multiplying out the Cayley transform. Central scalars are exactly
+the kernel. The least denominator of the rotation matrix is the odd part
+of $q\bar q$. Indeed its entries have this norm as common denominator,
+with diagonal numerators $w^2+x^2-y^2-z^2$ and their cyclic translates
+and off-diagonal numerators $2(xy\pm wz)$ and their cyclic translates.
+At an odd prime dividing the norm these cannot all vanish: vanishing
+forces the six pairwise products of the four coordinates to vanish
+modulo $p$, and the zero norm then forces every coordinate to vanish.
+At two the primitive norm has valuation at most two. If it has valuation
+one all numerators are even; if it has valuation two all four coordinates
+are odd, and all numerators are divisible by four. Because of the
+symmetric three Smith exponents the least denominator is also
+$[L:L\cap gL]$. This agrees with the cubic coincidence index \cite{Baake}.
+
+The denominator here is squarefree and equals $e$.
+As $q^2=2wq-q\bar q$, its coefficients are divisible by $p\mid e$
+if and only if $p\mid w$. The square rotation is integral precisely
+when this holds for every such $p$: divide $q^2$ by $p$ to remove the
+entire $p$-part of its norm. For $e\ge5$ the estimate
+$|w|\le2\sqrt e<e$ forces $w=0$. Pure primitive quaternions have
+norm $e$ or $2e$, since a sum of three squares divisible by four
+has all coordinates even. Conversely every triple of norm $e$ or
+$2e$ is primitive by squarefreeness. These give $r_3(e)/2,r_3(2e)/2$
+rotations. For $e=3$ there are also the eight rotations represented
+by $(3,\pm1,\pm1,\pm1)$, of order six. For $e=1$ there are the 24
+rotations of the cube: the identity, nine half-turns (already included
+by the pure quaternions), six quarter-turns, and eight third-turns.
+
+\subsection*{Evaluation of the local traces}
+At an odd prime the identity fixes all $p+1$ conic points. A half-turn
+with primitive axis of norm $b$ at $p\nmid 2b$ has an anisotropic
+fixed axis; the determinant of the orthogonal plane has square class
+$b$. Hence $1+\chi_p(-b)$ isotropic lines are fixed. For a quarter-turn,
+or a third- or sixth-turn at $p>3$, the axis is again anisotropic.
+The other two eigenlines are isotropic whenever defined since their
+eigenvalues square to a number different from one. The counts are
+$1+\chi_p(-1)$ and $1+\chi_p(-3)$ respectively. The quarter-turn calculation also applies at $p=3$. An integral third-turn is conjugate by a signed permutation
+to the cyclic permutation of the three coordinates. It fixes the unique eigenline $(1,1,1)$ modulo three,
+which is isotropic.
+
+At primes not dividing the rotation order the action decomposes by
+the distinct irreducible residue factors of the minimal polynomial:
+the Bezout projections lift over $\mathbb Z_p$. For a half-turn the
+summands have ranks one and two, and the unrestricted subgroup series
+on these summands give $F_2$. For the other rotations with two non-real
+eigenvalues, the nontrivial plane either splits into two lines or is
+free of rank one over the unramified quadratic integer ring. Its stable
+sublattices then give $(1-T)^{-2}$ or $(1-T^2)^{-1}$. This description
+applies equally to each stable edge intersection. For the identity use the
+rank-three HNF series $F_1$. For the exceptional order-six rotations at
+three the polynomial $X-1$ is coprime to $X^2-X+1$ over $\mathbb Z_3$.
+The plane is rank one over $\mathbb Z_3[\zeta_6]$, a discrete valuation
+ring with residue field of size three: $\zeta_6+1$ is a uniformizer
+by its Eisenstein polynomial at three. Thus its factor, including the
+axis, is $(1-T)^{-2}$, also on the reversed edge.
+
+At the exceptional primes, the local module calculation reduces
+to a fiber-product order. Let $O$ be a local integer ring with
+residue field $\mathbb F_p$ and uniformizer $\pi$. Consider the order
+\[
+ A=\{(x,y)\in\mathbb Z_p\times O:x\bmod p=y\bmod\pi\}.
+\]
+For an $A$-stable lattice $E$ with saturated module
+$(\mathbb Z_p\times O)E=D=p^a\mathbb Z_p\oplus\pi^bO$, one has
+$(p,\pi)D\subset E$ (here $(p,\pi)D$ denotes the direct sum of the
+two maximal-ideal multiples). The image of $E$ modulo this direct sum
+projects onto both residue spaces. The possibilities are the whole
+plane or one of the $p-1$ graphs of nonzero maps. Conversely all these
+possibilities work. For ambient $\mathbb Z_p\oplus O$ the series is
+$F_{\rm split}=(1+(p-1)T)/(1-T)^2$. For ambient $A$, when $a,b\ge1$,
+all graphs and the plane occur, with one power of $T$ removed because
+the ambient has index $p$. When only one of $a,b$ is zero, the
+residue-matching condition is impossible; at $(0,0)$ only the graph
+defining $A$ occurs. Thus $F_{\rm glued}=1+TF_{\rm split}$.
+For the third-turn at three, evaluation at $(1,\zeta_3)$ identifies
+the permutation lattice $\mathbb Z_3[X]/(X^3-1)$ with $A$ for
+$O=\mathbb Z_3[\zeta_3]$ and $\pi=1-\zeta_3$.
+The two factors have resultant $3$ and common residue field
+$\mathbb F_3$; polynomial representatives therefore give pairs
+with the same residue. The hyperplane for the fixed isotropic line imposes
+coordinate sum zero modulo three, so its module is $3\mathbb Z_3
+\oplus\pi O$, isomorphic to the split module. This gives
+$F_{\rm glued}-TF_{\rm split}/2$. At two the quarter-turn is
+the direct sum of its fixed axis and $\mathbb Z_2[i]$; evaluation
+at $(1,i)$ gives the same order $A$ with $\pi=1-i$ owing to the
+resultant $2$, and the ambient is split. The remaining third- and
+sixth-turns at two have a separate axis and the unramified quadratic
+plane.
+
+Finally, a dyadic half-turn has saturation
+$R=\mathbb Z_2\oplus\mathbb Z_2^2$ under the two rational eigenprojections.
+In coordinates on its projected summands the original lattice is $R$
+or the graph of a nonzero linear form on the negative residue plane:
+it contains $2R$, the two projections are surjective, and the only
+other subspace with surjective projections is the full residue space.
+The split case is equivalent to integral eigenprojections, or
+$g\equiv I\pmod2$. For a primitive axis $v$ with norm $b$ the half-turn
+is $2vv^t/b-I$, so this is exactly the case of odd $b$.
+A sublattice with saturation $2^a\mathbb Z_2\oplus D$ for
+$D\subset\mathbb Z_2^2$ has four choices (one full residue space and
+three graphs), giving the series $P$ for a split ambient.
+In a glued ambient, when $a\ge1$ one must have
+$D\subset\ker(\ell\bmod2)$ for its defining form $\ell$, and then
+every choice works, contributing $TP$. When $a=0$, $D$ must avoid
+containment in this kernel; exactly one graph works. The series of
+such $D$ is $(1-T)/((1-T)(1-2T))$. The asserted dyadic factors follow.
+
+\subsection*{A branch point inside the domain of continuation}
+Let $Z_{\rm cub}(s)=\sum_m a(m)m^{-s}$ and let all powers on the real
+line initially have their positive values. Define
+\[
+ R(s)=(1-2^{1-s})^{-1/2}
+ \prod_{p>2}\big(1-\tfrac12(p+1)p^{-s}\big)
+                  (1-p^{1-s})^{-1/2}.
+\]
+For $\Re s>3/2$ the product is nonvanishing and holomorphic:
+on compact subsets the logarithm of the $p$-factor is
+$O(p^{-\Re s}+p^{2-2\Re s})$, and each factor is nonzero.
+For a positive integer $b$ put $P_b(X)=1+3X$ if $b$ is odd and
+$P_b(X)=1-X+4X^2$ if $b$ is even. Set
+\[
+ B(s)=\sum_{e\ {\rm odd\ squarefree}}
+ \frac{e^{-s}}{2^{\omega(e)}}\sum_{b\in\{e,2e\}}r_3(b)P_b(2^{-s})
+  \prod_{p\nmid 2e}\left(1-\frac{1+\chi_p(-b)}2p^{-s}\right).
+\]
+This series is normally convergent on $\Re s>3/2$. The products over
+$p$ are bounded uniformly in $b,e$ on every compact subset of
+$\Re s>1$, and $\sum_{n\ge1}r_3(n)n^{-\sigma}$ converges for
+$\sigma>3/2$ by summing points of $\mathbb Z^3$ in dyadic annuli.
+One has $B(2)>0$.
+
+\begin{corollary}\label{cor:cubic-boundary}
+There is a holomorphic function $H$ on $\Re s>1$ such that
+\[
+ Z_{\rm cub}(s)=
+ \frac{\zeta(s)\zeta(s-2)\zeta(s-1)^{1/2}R(s)}{24}
+ +\frac{\zeta(s)^2\zeta(s-1)B(s)}{48}+H(s).
+\]
+The identity holds initially for $\Re s>3$. It gives a meromorphic
+continuation to $\Re s>2$ and continuation on paths in
+$\Re s>3/2$ avoiding zeros and the pole of $\zeta(s-1)$, with the
+usual continuation past isolated meromorphic poles. The pole at three
+is simple, with residue
+\[
+ \rho=\frac{\zeta(3)\zeta(2)}{24}
+     \prod_{p>2}\left(1-\frac{p+1}{2p^3}\right).
+\]
+At two, in a slit disk reached from the right,
+\[
+ Z_{\rm cub}(s)=\frac{\zeta(2)^2 B(2)}{48(s-2)}
+       -\frac{\zeta(2)R(2)}{48\sqrt{s-2}}+O(1).
+\]
+In particular no meromorphic germ at two agrees with this continuation.
+\end{corollary}
+\begin{proof}
+For the identity row, factor $\zeta(s)\zeta(s-1)\zeta(s-2)$
+out of the subgroup series; its odd-prime correction is
+$\prod_{p>2}(1-(p+1)p^{-s}/2)$.
+Extracting $\zeta(s-1)^{-1/2}$ leaves $R$.
+For every half-turn row put back the three common denominator factors
+of $\zeta(s)^2\zeta(s-1)$, including at the flipped primes. The remaining
+Euler factors at $p\mid e$ produce exactly $e^{-s}2^{-\omega(e)}$;
+the dyadic factors give $P_b$. The quarter-, third- and sixth-turn
+products are holomorphic on $\Re s>1$ by absolute convergence, since
+their good factors differ from one by $O(p^{-\Re s})$ uniformly on
+each compact subset. They give $H$ (including their group-order
+weights). At two use $\zeta(0)=-1/2$ and
+$(s-2)\zeta(s-1)=1+O(s-2)$.
+\end{proof}
+
+The decomposition also gives the unsmoothed estimate
+\[
+ \sum_{m\le X}a(m)=\frac{\rho}{3}X^3+
+ O\big(X^2(\log(2X))^{3/2}\big).
+\]
+For the error term, the summatory coefficients of
+$\zeta(s)\zeta(s-1)\zeta(s-2)$ are
+$\zeta(3)\zeta(2)X^3/3+O(X^2\log(2X))$: sum the squares of positive
+integers up to $X/(a b)$ with weight $b$ and bound the missing terms
+of $\sum_{a,b}a^{-3}b^{-2}$ by $O(1/X)$.
+The unsigned coefficients $h$ of the odd-prime correction satisfy
+\[
+ \sum_{j\le X}\frac{|h(j)|}{j^2}\le
+ \prod_{2<p\le X}\big(1+(p+1)/(2p^2)\big)\ll\sqrt{\log(2X)}
+\]
+by Mertens' prime reciprocal estimate. Dyadic decomposition gives
+\[
+ \sum_{j>X}|h(j)|/j^3\ll X^{-1}\sqrt{\log(2X)}.
+\]
+These estimates
+give the claimed error for the identity row. For the half-turn part
+strip off $\zeta(s-1)$; the remaining Dirichlet expansion is absolutely
+summable at two, by the same absolute bounds used for $B$ and for
+$\zeta(2)^2$. Since $\sum_{j\le y}j\ll y^2$, its contribution is
+$O(X^2)$. Absolute convergence at two gives the same bound for $H$.
+
+\subsection*{An intrinsic class-number interpretation}
+For any $m$, $a(m)$ is also the number of integral positive ternary
+Gram classes of determinant $m^2$ with Hasse invariant $+1$ at every
+odd $p\mid m$. Integrality here is with respect to the bilinear Gram matrix.
+At odd $p\nmid m$, diagonalization of a unimodular matrix gives
+unit entries and Hasse invariant $+1$. The real invariant is $+1$,
+so Hilbert reciprocity gives the invariant $+1$ at two as well.
+Hasse--Minkowski and the square determinant put the lattice in the
+rational cubic space. Every full integral lattice in that space
+enlarges to a self-dual lattice. At two use norm-integrality as above.
+At odd $p$, a maximal integral enlargement exists inside the dual of
+the original lattice. On diagonalizing this maximal lattice no exponent
+can be $\ge2$, since then division of the corresponding basis vector by
+$p$ gives an integral enlargement. The number of exponent-one entries
+is even. If it is two the diagonal is $u,pv,pw$ with $u,v,w$ units;
+its Hasse invariant is $\chi_p(-vw)$ by the odd-prime Hilbert symbol
+formula. Thus the last two unit coefficients define a split residual
+plane. An isotropic primitive combination of its two vectors has
+norm in $p^2\mathbb Z_p$ and pairs into $p\mathbb Z_p$ with the
+lattice, again permitting enlargement. Thus every maximal lattice
+at odd $p$ is unimodular. Gluing gives the required unimodular
+global parent and unimodular uniqueness identifies it with $L$.
+The resulting index is $m$ by the determinant formula. All implications
+reverse for a represented lattice.
+
+\subsection*{Other one-class ternary genera}
+The tree calculation extends to a ternary parent whose proper
+genus has class number one. Let $G$ be a positive integral symmetric
+ternary Gram matrix with $D=\det G$, $L$ its lattice, and
+$\Gamma=\mathrm{SO}(L)$. Fix a finite set $S$ of primes containing all
+divisors of $6D$. Suppose that every lattice in the proper genus of $L$
+is properly isometric to $L$. Write $Z_L^{(S)}(s)$ for the subform
+Dirichlet series restricted to indices prime to $S$ and
+$\zeta^{(S)}(s)=\zeta(s)\prod_{p\in S}(1-p^{-s})$.
+\begin{corollary}\label{cor:ternary-genus-one}
+For $(m,\prod_{p\in S}p)=1$ the coefficient is the following finite sum.
+Range over rational rotations $g$ with $g^2\in\Gamma$, whose least
+denominator in the chosen basis is squarefree and divides $m$; call this
+denominator $e$. Add $|\Gamma|^{-1}$ times the product over
+$p^k\parallel m$ of the $T^k$ coefficients of
+\[
+ \begin{cases}
+ TF_g/2 &p\mid e,\\
+ F_g(1-i_p(g)T/2)&p\nmid e.
+ \end{cases}
+\]
+Here $i_p(g)$ counts the $g$-fixed isotropic lines of $L/pL$.
+The common lattice-independent stable factor $F_g$ is $F_1,F_2,
+J_p(-1),J_p(-3)$ according as the rotation has order 1, 2, 4, or 3
+or 6. In the second row $i_p(1)=p+1$; for a half-turn of primitive
+axis $v$,
+$i_p(g)=1+\chi_p(-D\,v^tGv)$, and for the remaining orders
+$i_p(g)=1+\chi_p(-1)$ or $1+\chi_p(-3)$ respectively.
+The series is meromorphic on $\Re s>2$ and has a simple pole at three
+with positive residue
+\[
+ |\Gamma|^{-1}\prod_{p\in S}(1-p^{-1})\,
+ \zeta^{(S)}(3)\zeta^{(S)}(2)
+ \prod_{p\notin S}\big(1-(p+1)/(2p^3)\big).
+\]
+It has no meromorphic germ across the real point $s=2$.
+\end{corollary}
+\begin{proof}
+At $p\notin S$ all vertices of the local self-dual tree are locally
+isometric to $L_p$. Every nonsingular
+ternary form over $\mathbb F_p$ contains a hyperbolic plane, and its
+remaining line is determined up to squares by the determinant. A
+residue-field isometry lifts to $\mathbb Z_p$: given an isometry
+modulo $p^j$, a correction by $I+p^jX$ solves the next linearized
+Gram equation because $X^tA+AX$ maps onto the symmetric matrices
+for an invertible $A$ and odd $p$. A change of determinant sign can
+be made by $-I$. Keep the parent fixed at all $p\in S$. Each
+resulting global vertex is in the proper genus of $L$ and hence
+is a permissible parent. For each $M$ the local tree Euler count
+therefore still counts just one isometry class. The local Smith
+argument identifies displacement with denominator at $p\notin S$;
+at all other primes there is no displacement.
+
+Such a $g$ has finite order because $g^2\in\Gamma$. Rationality of
+the characteristic polynomial implies order $1,2,3,4$ or $6$.
+The local calculations are tame as $p\nmid6$, and give the displayed
+stable factors. For the half-turn the orthogonal plane has determinant
+class $D/(v^tGv)$; the resulting symbol gives the stated number of
+lines. For the other nonidentity orders the fixed axis is nondegenerate
+and the two nontrivial eigenlines are isotropic exactly when present.
+All rotations with $g^2\ne1$ form a finite list: a positive real
+rotation with a prescribed nonidentity square is supported on the
+same axis and has at most two possible angles. Half-turns are enumerated
+by primitive integral vectors $v$ up to sign, through
+$g=2v(v^tG)/(v^tGv)-I$. If $q=v^tGv$, then
+$q\le 2De$: the gcd of the entries of $v(v^tG)$ equals the gcd
+of the entries of $v^tG$, and multiplying by the adjugate of $G$
+shows this gcd divides $D$. This gives a finite search bound for each
+index. At primes dividing $e$, $g^2L=L$ and the endpoints do form
+the required edge by the squarefree Smith exponents.
+
+For analytic continuation, the finite set of rotations with $g^2\ne1$
+has Euler products absolutely convergent on $\Re s>1$. For each
+half-turn strip off $\zeta^{(S)}(s)^2\zeta^{(S)}(s-1)$. The remaining
+term is
+\[
+ 2^{-\omega(e)}e^{-s}
+ \prod_{p\notin S,\ p\nmid e}(1-i_p(g)p^{-s}/2).
+\]
+Only squarefree $e$ outside $S$ occur. This series of terms is
+normally convergent on $\Re s>3/2$ by $q\le2De$ and the ternary
+lattice point bound. Thus all nonidentity contributions are meromorphic
+in a neighborhood of two. The identity term is
+\[
+ |\Gamma|^{-1}\zeta^{(S)}(s)\zeta^{(S)}(s-1)\zeta^{(S)}(s-2)
+       \prod_{p\notin S}(1-(p+1)p^{-s}/2).
+\]
+As above its product is $\zeta^{(S)}(s-1)^{-1/2}$ times a holomorphic
+unit near two. Since $\zeta^{(S)}(s-2)$ has zero of order $|S|$ at
+two and $\zeta^{(S)}(s-1)$ has a simple pole there, the identity
+contribution is $(s-2)^{|S|-1/2}$ times a holomorphic unit, which
+precludes a meromorphic germ. Evaluating at three gives the residue
+as stated.
+\end{proof}
+\subsection*{All indices for the lattice of determinant two}
+Write $Z_{112}$ for the unrestricted subform series of the lattice
+with diagonal Gram matrix $(1,1,2)$. The dyadic parent change gives the following local factors.
+
+\begin{theorem}\label{thm:det-two}
+Use Theorem~\ref{thm:cubic-all} with its odd-prime rows and rotation
+multiplicities unchanged. At two, include the coefficient of
+$T^{v_2(m)}$ for every $m$, including odd $m$, using this table with
+$F=((1-T)^2(1-2T))^{-1}$:
+\[
+\begin{array}{c|l}
+\text{rotation}&\text{factor at two}\\ \hline
+1 &(3-2T)F_1\\
+2,\ b\ {\rm even}&(1+3T)F\\
+2,\ b\equiv1\pmod4 &(3-T+2T^2)F\\
+2,\ b\equiv3\pmod4 &(3-2T)(1+3T)F\\
+4 &(1+T)/(1-T)^2\\
+3,\ 6 &T/((1-T)(1-T^2)).
+\end{array}
+\]
+The result is the coefficient of $Z_{112}$ for every $m\ge1$.
+Its residue at $s=3$ is $11/4$ times the cubic residue; the same
+unsmoothed error bound holds. The coefficient of $(s-2)^{-1/2}$ in
+its continuation is $5/2$ times the corresponding cubic coefficient,
+and the term of order $(s-2)^{-1}$ has strictly positive coefficient.
+\end{theorem}
+\begin{proof}
+In the original lattice the vectors $(1,1,0),(1,-1,0),(0,0,1)$
+give an index-two lattice $K$ of Gram matrix $2I_3$. Use its basis
+and write $B=2\,\cdot$, twice the usual dot product. The local lattice
+$K_2$ is intrinsic, being exactly the vectors with $B(x,x)\in2\mathbb Z_2$.
+Every integral bilinear dyadic lattice $P$ of determinant valuation
+one lies in $\frac12K_2$: a primitive cubic vector has norm valuation
+at most one. The nonzero residues $2P\bmod 2K_2$ have weight two
+since $B(x,x)$ is integral. Distinct weight-two residues have odd dot
+product, so their halves cannot both belong to $P$. Covolume then
+forces $K_2\subset P$ and $[P:K_2]=2$. Conversely each of the three
+weight-two lines $\lambda$ gives an integral parent
+$P_\lambda=K_2+\mathbb Z_2\lambda/2$, where any integral lift can be used.
+All have pairwise intersection $K_2$.
+
+Every positive integral lattice of determinant two is isometric to
+the stated parent. The open ball of radius $\sqrt2$ has volume greater
+than $8\sqrt2$, so Minkowski gives a unit vector. Its rank-two
+orthogonal complement still has determinant two, and the disk of the
+same radius has area greater than $4\sqrt2$. Splitting off another
+unit gives the assertion. At odd $p$ the permissible local parents
+are exactly the self-dual vertices for $B/2$. Consequently an abstract
+represented lattice $M$ in this rational space can be counted by the
+same contractible product of odd-prime parent trees as in the cubic
+proof, with one dyadic membership test: $M_2$ must lie in at least
+one $P_\lambda$. Indeed any permissible choices of odd vertices and
+one such dyadic parent glue to an integral lattice of determinant
+two. Conversely any embedding in the stated parent supplies these
+local choices. To anchor a corner of the odd complex, glue its odd
+vertices to $K_2$; the resulting lattice for $B/2$ is integral
+unimodular at every prime, hence cubic. This gives exactly the same
+anchoring group, rotations and odd local factors as before.
+
+For a dyadic rotation $g$ write $F_{g,E}$ for the stable-sublattice
+series in $E$. For $M_2\subset K_2$, its index in any $P_\lambda$
+is twice its index in $K_2$. Every other permissible $M_2$ belongs
+to just one $P_\lambda$, which must be fixed if $M_2$ is fixed.
+Thus the requisite trace is
+\[
+ T F_{g,K_2}+
+ \sum_{\lambda:\,gP_\lambda=P_\lambda}
+       (F_{g,P_\lambda}-T F_{g,K_2}).
+\]
+This counts the identity once for every eligible lattice at this place,
+regardless of how many parents contain it.
+
+The identity fixes all three parents. A quarter-turn permutes two
+coordinates modulo two and fixes just the line they span by their sum.
+This enlarges its Gaussian plane by the fractional ideal
+$(1-i)^{-1}\mathbb Z_2[i]$, leaving the module type unchanged.
+The other rotations of orders three and six have an unramified
+irreducible two-dimensional summand modulo two, whose nonzero elements
+are precisely the three weight-two vectors: the fixed axis is the
+nonisotropic line and no weight-two line is fixed. Indeed the weight-two
+plane is the kernel of the invariant coordinate-sum form and is the
+unique nontrivial residue summand.
+
+For a half-turn of primitive axis $v$ let $E=vv^t/b$ be the positive-axis
+projection. A stable ambient is split if and only if $E$ preserves it;
+its two possible series are $S=(1+3T)F$ and $G=(1-2T)^{-1}+TS$
+from the cubic calculation. If $b$ is even then the reduction of $g$
+interchanges the two coordinates on which $v$ is odd. Its only fixed
+parent adjoins $v/2$ to $K_2$. The image $E K_2$ lies in
+$\mathbb Z_2v/2$, so the enlarged parent is split. For odd $b$,
+$K_2$ is split, all three parents are fixed and $P_\lambda$ is split
+exactly when $E\bmod2$ preserves $\lambda$. When $b\equiv1\bmod4$,
+$v$ has weight one modulo two: precisely the line avoiding that
+coordinate works, giving $S+2G-2TS$. When $b\equiv3\bmod4$, $v$
+has weight three and is orthogonal to each weight-two residue, giving
+$(3-2T)S$. These are the rows in the table.
+
+The analytic calculation is unchanged except for these explicit
+dyadic factors. The identity term acquires $3-2^{1-s}$; at $s=3$
+and $s=2$ this equals $11/4$ and $5/2$. The half-turn polynomial
+after removing $F$ belongs to the displayed finite list, and is
+positive at $T=1/4$ in all cases. The same absolute estimates therefore
+hold for its meromorphic contribution, with positive residue at two.
+The finitely many remaining rotations are holomorphic near two, and
+the finite dyadic change preserves the summatory error bound.
+\end{proof}
+For the determinant-two parent, the coefficients at indices
+$5,7,35$ are respectively $9,13,234$.
+\subsection*{A finite test for dyadic changes of the cubic parent}
+Let $C=\mathbb Z^3$ with the cubic metric, and take any lattice $P$
+with $2^aC\subset P\subset C$. A common scalar change of the metric or lattice leaves the
+construction unchanged. Let $\mathcal P$
+be the orbit of $P_2$ under $\mathrm{SO}(C_2)$. Suppose that the
+integral signed-permutation rotation group $\Gamma$ acts transitively
+on $\mathcal P$. The lattices are
+given by subgroups of $C/2^aC$, and the needed residue matrices of
+$\mathrm{SO}(C_2)$ can be listed by primitive quaternion coordinates
+modulo $2^{a+2}$. In fact every dyadic rational rotation is given by
+a quaternion by the Cayley argument above over $\mathbb Q_2$; a
+primitive quaternion norm has valuation at most two. Dividing the
+matrix numerators and the norm by the common power of two therefore
+determines the rotation modulo $2^a$. Each primitive residue lift is
+a genuine dyadic rotation. For example, modulo two the group consists
+exactly of the coordinate permutations: a vector of norm one has
+weight one or three, and the weight-three vector cannot be a column
+of an orthonormal basis as its complement is alternating. The integral
+rotations realize all permutations. The orbit hypothesis consequently
+holds for \emph{every} intermediate $2C\subset P\subset C$.
+
+\begin{corollary}\label{cor:dyadic-cubic-family}
+Under the orbit hypothesis the full subform series has a finite
+coefficient formula at every index, with explicit leading residue,
+unsmoothed error term and real square-root branch at two.
+Keep the odd local factors and the individual rational rotations in
+the cubic formula, grouping half-turns only when all their local
+coefficients coincide. For each rotation $g$ replace its dyadic row
+by the following factor even when the index is odd:
+\[
+ D_g(T)=
+ \sum_{\substack{\varnothing\ne J\subset\mathcal P\\gJ=J}}
+ (-1)^{c_g(J)+1}\,
+ T^{\log_2[P_0:E_J]}F_{g,E_J}(T).
+\]
+Here $E_J=\bigcap_{P'\in J}P'$, $P_0$ is any member of $J$, and
+$c_g(J)$ counts the cycles of the permutation induced by $g$ on $J$.
+Every factor $F_{g,E_J}$ is one of the dyadic series evaluated in
+the preceding proofs. The original cubic residue at three and the
+coefficient of $(s-2)^{-1/2}$ are multiplied, respectively, by
+$A(1/8)$ and $A(1/4)$, where $A(T)=D_1(T)/F_1(T)$ is a polynomial
+positive at both arguments. The counting error remains
+$O(X^2(\log(2X))^{3/2})$.
+\end{corollary}
+
+\begin{proof}
+Glue any collection of odd-prime self-dual parents to the intrinsic
+dyadic cubic lattice $C_2$. This gives a global positive unimodular
+lattice, necessarily cubic. In its coordinates any further choice
+$P'\in\mathcal P$ corresponds to the stated parent $P$ by the assumed
+transitivity of the integral rotation group. Hence the odd-prime
+parent complex of a represented $M$ is unchanged, while dyadic
+membership is precisely $M_2\subset P'$ for some $P'\in\mathcal P$.
+
+If $gM_2=M_2$ the permutation $g$ preserves its set of permissible
+dyadic parents. On any nonempty finite set with $t$ such cycles, the
+alternating sum over nonempty unions of cycles is
+$\sum_{j=1}^t(-1)^{j+1}\binom tj=1$; for an empty set it is zero.
+Interchanging the resulting finite sums gives the displayed polynomial
+combination of stable series. For half-turns the series is the split
+or glued half-turn series according as the positive eigenprojection
+preserves $E_J$ or not. For a quarter-turn project to the axis and to
+the Gaussian plane. The two projected modules have ranks one over
+$\mathbb Z_2$ and $\mathbb Z_2[i]$; the fiber-product classification
+above gives a split ambient or a glued ambient according as the axis
+projection preserves $E_J$ or not. For orders three and six there is
+always a split axis and an unramified quadratic plane. Eigenprojections
+can be tested on the generators of
+$E_J$ by rational arithmetic and dyadic valuations.
+
+Each half-turn row after removing $F_2$ has a polynomial drawn from
+a finite list, since $\mathcal P$ is fixed. At $T=1/4$ it is positive:
+the genuine local stable-lattice series converges there and contains,
+for example, a sufficiently small scalar multiple of $C_2$ in every
+parent. The global half-turn sum satisfies the preceding normal-convergence
+estimate before axes are grouped by norm. The identity
+row is $A(T)F_1(T)$. Its coefficients dominate those of $F_1(T)$
+because any one of the parents by itself already contributes that
+many sublattices. Hence $A(T)\ge1$ on $0<T<1/4$, and $A(1/4)\ge1$
+by continuity. The singular expansion and the error estimate now follow
+by the proof of Corollary~\ref{cor:cubic-boundary}.
+\end{proof}
+\begin{corollary}\label{cor:fcc-bcc}
+The face-centered cubic and body-centered cubic lattices have identical
+proper and ordinary subform Dirichlet series. They are not similar.
+\end{corollary}
+\begin{proof}
+Use the face-centered lattice $D=\{x\in C:\sum x_i\equiv0\bmod2\}$
+and the integral representative of its dual
+$E=2D^*=\{x\in C:x_1\equiv x_2\equiv x_3\bmod2\}$ for the
+body-centered lattice. The dual description follows because $2C\subset
+D$ and its residue plane has orthogonal complement spanned by $(1,1,1)$.
+Each has only one dyadic parent in its rotation orbit since every
+residue rotation permutes the coordinates. At odd places their local
+lattices both equal $C_p$. For each half- or quarter-turn the dyadic series
+depends just on whether its rational axis projection preserves the
+ambient lattice. This projection $U$ is self-adjoint for the dot
+product, so $UD_2\subset D_2$ if and only if $UD_2^*\subset D_2^*$,
+by the definition of the dual and reflexivity of full lattices.
+Scaling by two does not change this property. The dyadic series of the
+other rotation orders are independent of the stable ambient. Thus
+each local factor agrees in the two computations of
+Corollary~\ref{cor:dyadic-cubic-family}. There are twelve shortest
+vectors in $D$ of squared length two and eight in $E$ of squared
+length three; a similarity preserves the number of shortest vectors.
+\end{proof}
