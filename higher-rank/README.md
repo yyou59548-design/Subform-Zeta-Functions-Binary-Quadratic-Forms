@@ -1,6 +1,6 @@
 # Subform Zeta Functions of Integral Quadratic Lattices in Arbitrary Rank
 
-**Research preprint — Z. Zhang (2026)**
+**Research preprint — Zhanhe Zhang (2026)**
 
 This project presents a solution to the **positive-definite arbitrary-rank extension problem** posed by **D. Kim, S. H. Lee, and S. Lee** in *Zeta Functions Enumerating Subforms of Quadratic Forms*, *Mathematische Annalen* **393** (2025), 1459–1514. It studies the intrinsic integral-isometry classes represented by finite-index sublattices of a fixed quadratic lattice.
 
@@ -29,6 +29,6 @@ The principal positive-definite higher-rank generalization is treated. The manus
 ## References
 
 - D. Kim, S. H. Lee, and S. Lee, “Zeta functions enumerating subforms of quadratic forms,” *Mathematische Annalen* **393** (2025), 1459–1514. [DOI](https://doi.org/10.1007/s00208-025-03273-9).
-- Z. Zhang, “Subform Zeta Functions of Positive Definite Binary Quadratic Forms of Arbitrary Conductor,” preprint (2026).
+- Zhanhe Zhang, “Subform Zeta Functions of Positive Definite Binary Quadratic Forms of Arbitrary Conductor,” preprint (2026).
 
 **Status:** author manuscript / research preprint. Please cite the eventual arXiv identifier once available.
