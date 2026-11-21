@@ -6,6 +6,11 @@ This project presents a solution to the **positive-definite arbitrary-rank exten
 
 The manuscript extends the earlier binary theory to **all positive-definite integral quadratic lattices of rank `n >= 2`** and supplies further results in indefinite signature. These statements describe the author's research results; the preprint has not yet been independently peer-reviewed.
 
+## Manuscript and source
+
+- [Read the complete 48-page research paper (PDF)](Zhang_Subform_Zeta_Arbitrary_Rank_2026.pdf)
+- [Download the complete compilable LaTeX source (ZIP)](arxiv_source_48pp.zip)
+
 ## Main results
 
 1. **Higher-dimensional counting:** exact all-index coefficient formulas for both ordinary (`GL`) and proper (`SL`) intrinsic isometry, using canonical restoration and a signed parent-incidence formula.
