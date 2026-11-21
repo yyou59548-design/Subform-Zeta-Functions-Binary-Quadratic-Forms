@@ -10,7 +10,7 @@ The manuscript extends the earlier binary theory to **all positive-definite inte
 
 ## Manuscript and source
 
-- [Read the complete 48-page research paper (PDF)](Zhang_Subform_Zeta_Arbitrary_Rank_2026.pdf)
+- [Read the complete 49-page research paper (PDF)](Zhang_Subform_Zeta_Arbitrary_Rank_2026.pdf)
 - [Download the complete compilable LaTeX source (ZIP)](arxiv_source_48pp.zip)
 
 ## Main results
