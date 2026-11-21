@@ -2,6 +2,8 @@
 
 **Research preprint — Zhanhe Zhang (2026)**
 
+**Author contact:** [2024311337@email.cufe.edu.cn](mailto:2024311337@email.cufe.edu.cn)
+
 This project presents a solution to the **positive-definite arbitrary-rank extension problem** posed by **D. Kim, S. H. Lee, and S. Lee** in *Zeta Functions Enumerating Subforms of Quadratic Forms*, *Mathematische Annalen* **393** (2025), 1459–1514. It studies the intrinsic integral-isometry classes represented by finite-index sublattices of a fixed quadratic lattice.
 
 The manuscript extends the earlier binary theory to **all positive-definite integral quadratic lattices of rank `n >= 2`** and supplies further results in indefinite signature. These statements describe the author's research results; the preprint has not yet been independently peer-reviewed.
